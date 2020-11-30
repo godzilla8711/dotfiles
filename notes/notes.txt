@@ -1,0 +1,8 @@
+GIT Submodules...
+
+To create submodule links...
+git submodule add https://github.com/tpope/vim-surround.git ./vimfiles/bundle/surround
+
+To fetch submodule content along with
+git clone https://github.com/godzilla8711/temp1.git temp1 --recursive
+

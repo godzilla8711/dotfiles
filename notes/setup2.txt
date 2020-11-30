@@ -1,0 +1,34 @@
+# Add the "add-apt-repository" command to Ubuntu if not present
+sudo apt-get install software-properties-common
+
+# To upgrade node on ubuntu:
+sudo apt-get update
+
+# Completely remove node and all dependencies (e.g. python)
+sudo apt-get purge nodejs
+sudo apt-get auto-remove
+
+# Download and install latest Node 12.x 
+# Note that you can also do sudo apt-get upgrade nodejs
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install nodejs
+
+# Update git to latest version
+sudo apt-get purge git
+sudo apt-get auto-remove
+sudo apt-get install git
+
+_______________________________
+Install Typescript linting into a project using eslint plug-in
+https://medium.com/@oliver.grack/using-eslint-with-typescript-and-react-hooks-and-vscode-c583a18f0c75
+_______________________________
+To Do...
+- Learn about mark down
+- Learn about JsDoc
+
+_________________________
+Recent
+
+For nodegyp on windows...
+Run the following as Administrator:  npm install --global --production windows-build-tools
+

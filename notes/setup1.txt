@@ -1,0 +1,41 @@
+git clone git://github.com/ajh17/Spacegray.vim ~/vimfiles/bundle/spacegray
+git clone https://github.com/tpope/vim-surround.git ~/vimfiles/bundle/surround
+git clone https://github.com/tpope/vim-repeat.git ~/vimfiles/bundle/repeat
+git clone https://github.com/editorconfig/editorconfig-vim.git ~/vimfiles/bundle/editorconfig
+git clone https://github.com/sheerun/vim-polyglot.git ~/vimfiles/bundle/polyglot (git checkout tags/v4.16.0)
+git clone https://github.com/itchyny/lightline.vim ~/vimfiles/bundle/lightline
+git clone https://github.com/itchyny/vim-gitbranch.git ~/vimfiles/bundle/gitbranch
+
+-- Install fzf and fzf.vim
+git clone --depth 1 https://github.com/junegunn/fzf.git /home/tony/dotfiles/bin/fzf
+Run: /home/tony/dotfiles/bin/fzf/install
+Update .vimrc: nnoremap <C-p> :<C-u>FZF<CR>
+git clone https://github.com/junegunn/fzf.vim.git ~/vimfiles/bundle/fzf
+
+-- Optional bat for fzf plugin preview
+Install bat:
+  Download debian package with latest release of bat
+  cp /mnt/c/Users/tony/Downloads/bat_0.17.1_amd64.deb .
+  sudo dpkg -i bat_0.17.1_amd64.deb
+
+On Linux, change first occurrence of this in vimfiles/bundle/spacegray/colors/spacegray.vim
+  - from ctermbg=234
+  - to ctermbg=232
+
+" FZF plugin
+"   Run:    git clone --depth 1 https://github.com/junegunn/fzf.git /home/tony/dotfiles/bin/fzf
+"   Run:    /home/tony/dotfiles/bin/fzf/install
+"   Update: .vimrc: nnoremap <C-p> :<C-u>FZF<CR>
+"   Run:    git clone https://github.com/junegunn/fzf.vim.git ~/vimfiles/bundle/fzf
+set runtimepath+=/home/tony/dotfiles/bin/fzf
+set runtimepath+=~/vimfiles/bundle/fzf
+nnoremap <C-p> :<C-u>FZF<CR>
+
+-- Nerdtree
+git clone https://github.com/preservim/nerdtree.git ~/vimfiles/bundle/nerdtree
+
+-- Install linting
+npm list --depth=0 --global
+sudo npm install eslint -g
+git clone --depth 1 https://github.com/dense-analysis/ale.git ~/vimfiles/bundle/ale
+

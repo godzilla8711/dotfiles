@@ -1,0 +1,13 @@
+# Environment variables
+export JAVA_HOME=/usr/bin/java
+
+# Aliases
+alias vimfzf='vim $(fzf)'
+
+# Disable ^S which stops all terminal output to avoid vim freezes from ^S.
+# Use ^Q if this ever occurs in vim to unfreeze.
+stty -ixon
+
+# Fuzzy find init script
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+

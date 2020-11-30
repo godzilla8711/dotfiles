@@ -1,0 +1,33 @@
+[submodule "bin/fzf"]
+	path = bin/fzf
+	url = https://github.com/junegunn/fzf.git
+[submodule "vimfiles/bundle/spacegray"]
+	path = vimfiles/bundle/spacegray
+	url = https://github.com/ajh17/Spacegray.vim
+[submodule "vimfiles/bundle/surround"]
+	path = vimfiles/bundle/surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vimfiles/bundle/repeat"]
+	path = vimfiles/bundle/repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "vimfiles/bundle/editorconfig"]
+	path = vimfiles/bundle/editorconfig
+	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "vimfiles/bundle/polyglot"]
+	path = vimfiles/bundle/polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
+[submodule "vimfiles/bundle/lightline"]
+	path = vimfiles/bundle/lightline
+	url = https://github.com/itchyny/lightline.vim
+[submodule "vimfiles/bundle/gitbranch"]
+	path = vimfiles/bundle/gitbranch
+	url = https://github.com/itchyny/vim-gitbranch.git
+[submodule "vimfiles/bundle/fzf"]
+	path = vimfiles/bundle/fzf
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "vimfiles/bundle/nerdtree"]
+	path = vimfiles/bundle/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule "vimfiles/bundle/ale"]
+	path = vimfiles/bundle/ale
+	url = https://github.com/dense-analysis/ale.git
