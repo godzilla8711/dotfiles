@@ -1,5 +1,9 @@
-# git submodule deinit the_submodule
-# git rm the_submodule 
+# Remove a submodule
+# git submodule deinit ./vimfiles/bundle/spacegray
+# git rm ./vimfiles/bundle/spacegray 
+
+# Add back after removing
+# Then do git submodule add --force etc. to readd
 
 # Submodules
 
