@@ -18,4 +18,4 @@ touch file
 git add file
 git commit -m 'Initial commit'
 gh repo create
-git push -u origin main
+git push -u origin master
