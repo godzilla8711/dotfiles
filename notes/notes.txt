@@ -10,7 +10,7 @@ git clone https://github.com/godzilla8711/temp1.git temp1 --recursive
  git submodule deinit ./vimfiles/bundle/spacegray
  git rm ./vimfiles/bundle/spacegray 
 
-Create New GitHub repo using GIT Client tool:
+# Create New GitHub repo using GIT Client tool:
 mkdir project
 cd project
 git init
