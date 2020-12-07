@@ -58,11 +58,11 @@ set runtimepath+=~/vimfiles/bundle/surround
 set runtimepath+=~/vimfiles/bundle/repeat
 
 " FZF plugin
-"   Run:    git clone --depth 1 https://github.com/junegunn/fzf.git /home/tony/dotfiles/bin/fzf
-"   Run:    /home/tony/dotfiles/bin/fzf/install
+"   Run:    git clone --depth 1 https://github.com/junegunn/fzf.git ~/dotfiles/bin/fzf
+"   Run:    ~/dotfiles/bin/fzf/install
 "   Update: .vimrc: nnoremap <C-p> :<C-u>FZF<CR>
 "   Run:    git clone https://github.com/junegunn/fzf.vim.git ~/vimfiles/bundle/fzf
-set runtimepath+=/home/tony/dotfiles/bin/fzf
+set runtimepath+=~/dotfiles/bin/fzf
 set runtimepath+=~/vimfiles/bundle/fzf
 nnoremap <C-p> :<C-u>FZF<CR>
 
@@ -136,14 +136,4 @@ let g:lightline = {
 " let g:syntastic_javascript_checkers = ['eslint']
 " let g:syntastic_check_on_open = 0
 " let g:syntastic_check_on_wq = 0
-
-" ---------------------------
-" Archive START
-" colorscheme tony
-" set guifont=courier:h11
-" winpos 105 136
-" set lines=31
-" set columns=95
-" Archive END
-" ---------------------------
 
