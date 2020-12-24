@@ -1,0 +1,13 @@
+# Install...(which versions?)
+
+- git
+- nodejs/npm
+- postgres 
+- java
+- fzf, bin (to support plugins -- see dotfiles for more info)
+- vim, curl (if not present)
+
+- solr
+- nginx
+- mongodb
+
