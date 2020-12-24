@@ -1,3 +1,7 @@
+# This dotfiles repo uses 11 "submodules", allowing it to utilize specific versions of other git repos.
+# An added submodule refers to a specific commit of the external git repo rather than a copy.
+# If later needed, these were the original steps to add the submodules to this dotfiles repo.
+
 # Add bin submodules
 git submodule add https://github.com/junegunn/fzf.git ./bin/fzf
 
