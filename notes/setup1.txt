@@ -24,7 +24,3 @@ set runtimepath+=/home/tony/dotfiles/bin/fzf
 set runtimepath+=~/vimfiles/bundle/fzf
 nnoremap <C-p> :<C-u>FZF<CR>
 
--- Install linting to support plug-ins
-npm list --depth=0 --global
-sudo npm install eslint -g
-

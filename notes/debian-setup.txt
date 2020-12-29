@@ -1,5 +1,5 @@
   
-# Add the "add-apt-repository" command to Ubuntu if not present
+# Add the "add-apt-repository" command to Ubuntu if not present allowing "apt" to be used instead of "apt-get"
 sudo apt-get install software-properties-common
 ________________________________
 GIT...
@@ -10,12 +10,12 @@ sudo apt install git
 git --version
 
 # Update git to latest version
-add-apt-repository ppa:git-core/ppa
-apt update
-apt install git
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update
+sudo apt install git
 
 To see git configs: git config -l --global
-To set:
+Set the following:
   git config --global user.name "Smith, Tom"
   git config --global user.email "tom.smith@somewhere.com"
   git config --global color.ui true
@@ -30,11 +30,38 @@ sudo apt install nodejs
 node --version
 npm --verson (may need to restart ubuntu)
 
-
 # Update nodejs to latest version
 curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
 sudo apt install nodejs
+
+To see npm global config: npm config list --global
+Set the following:
+  npm config set package-lock false
+
+Install linting to support plug-ins
+npm list --depth=0 --global
+sudo npm install eslint -g
+
+_________________________________
+Java
+
+_________________________________
+DOT_ files 
+- Backup first
+_________________________________
+FZF/BAT (ensure to clone dotfiles repo first)
+
+# Install fzf binary
+./bin/fzf/install (answer "n" to everything)
+fzf (from command line to verify install after copying in DOT_ files)
+
+# Install bat
+sudo dpkg -i bin/bat_0.17.1_amd64.deb
+
+# Uninstall fzf/bat
+./bin/fzf/uninstall
+sudo dpkg -r bat
 
 ____________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________
@@ -44,7 +71,7 @@ apt notes (see https://techreviewpro.com/sudo-apt-get-update/)
 Primary apt commands...
 
 apt list --installed
-  - List all locallyinstalled packages
+  - List all locally installed packages
 
 sudo apt-get update
   - Fetch the latest list of available packages from the repositories (does not affect any installed items): 
@@ -82,6 +109,6 @@ sudo apt-get autoclean
 sudo apt-get clean
   - Deletes all the packages that reside in your package cache. So, in order to install it, you need to re-download them all.
 
-apt-get autoremove 
+sudo apt-get autoremove 
   - Remove any unreferenced packages
 
