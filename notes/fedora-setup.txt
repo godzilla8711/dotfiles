@@ -1,0 +1,27 @@
+  
+________________________________
+GIT...
+
+# Install GIT
+sudo yum update
+sudo apt install git
+git --version
+
+# Update git to latest version (TBD)
+
+To see git configs: git config -l --global
+To set:
+  git config --global user.name "Smith, Tom"
+  git config --global user.email "tom.smith@somewhere.com"
+  git config --global color.ui true
+  git config --global push.default current
+
+_________________________________
+Node/NPM
+
+
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+yum notes...
+
