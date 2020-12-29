@@ -20,19 +20,21 @@ To set:
   git config --global user.email "tom.smith@somewhere.com"
   git config --global color.ui true
   git config --global push.default current
+
 _________________________________
+Node/NPM
 
-# To upgrade node on ubuntu:
-sudo apt-get update
+# Install Node (includes npm)
+sudo apt update
+sudo apt install nodejs
+node --version
+npm --verson (may need to restart ubuntu)
 
-# Completely remove node and all dependencies (e.g. python)
-sudo apt-get purge nodejs
-sudo apt-get auto-remove
 
-# Download and install latest Node 12.x 
-# Note that you can also do sudo apt-get upgrade nodejs
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-sudo apt-get install nodejs
+# Update nodejs to latest version
+curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
+sudo bash nodesource_setup.sh
+sudo apt install nodejs
 
 ____________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________
