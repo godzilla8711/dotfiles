@@ -1,0 +1,441 @@
+________________NOTES________________
+
+NPM:
+List all global installed npm modules:  npm list -g --depth=0
+List all global config settings: npm config list global
+Get a specific global config setting: npm config get prefix (Note "prefix" is where global NPM modules are installed)
+Set a specific global config setting: npm config set prefix C:/Programs/DCPS/npm
+Show latest version of a module: npm show dcps-common version
+
+Disable package-lock.json globally:
+npm config set package-lock false
+npm config list
+
+NPM linking...
+1.  cd into c:/ws/module-admin
+- To see all global links:  npm ls --global
+- To create a global link for this module: npm link
+2.  cd into c:/ws/dcps-prime
+- Ensure the remove package is installed: npm uninstall dcps-admin
+- Add the link:  npm link dcps-admin
+
+When done NPM linking...
+1.  cd into c:/ws/dcps-prime
+- npm unlink dcps-admin
+2.  cd into c:/ws/module-admin
+- npm unlink
+- To see all global links:  npm ls --global
+________________
+
+GIT:
+List all branches:  git branch -a
+Undo added file (not commited):  git reset HEAD filename (or for all files: git reset HEAD .)
+Undo entire last commit:  git reset --soft HEAD~1
+First branch push to stash:  git push --set-upstream origin branchName
+Stash modified files: git stash
+Unstash modified files: git stash pop
+
+- File difference between branches
+git diff origin/develop -- src/both/components/common/Table.js
+
+Dummy Push:
+1. git commit --allow-empty -m "Dummy commit to force a rebuild"
+2. git push
+
+List all global config values:  git config --global --list
+List all local and global config values:  give config --list
+List all remotes:   git remote -v
+
+Checkout based on date:
+git checkout `git rev-list -n 1 --before="2019-09-04 13:37" develop`
+
+Merge latest changes from develop into currect branch
+new: git checkout my_branch
+new: git pull origin develop
+
+Remove the need for the "set-upstream" parameter every time you do the first push on your branch
+git config --global push.default current
+See updated files between 2 branches from git bash:
+git diff --name-status develop..S-07960_Mer_List_Use_Case_Api
+M       package.json
+M       src/request/persistence/request-api.js
+M       test/request/persistence/request-api-test.js
+
+Global config settings:
+To see all global configs: git config -l --global
+To set:
+  git config --global user.name "Smith, Tom"
+  git config --global user.email "tom.smith@somewhere.com"
+  git config --global color.ui true
+  git config --global push.default current
+
+__________________
+Lodash:
+
+Lodash chaining (refer to lodash "chain" documentation for details on what can be chained)...
+  // Separate steps
+  const step1 = _.filter(caseSummary.contacts,
+    contact => _.isEmpty(contact.contactDeactivatedDate) && (contact.contactType === contactType.APPOINTED_REPRESENTATIVE));
+  const step2 = _.sortBy(step1, contact => new Date(contact.lastUpdatedTimestamp));
+  const step3 = _.last(step2);
+
+  // Explicit chaining
+  const appointedRep2 = _.chain(caseSummary.contacts)
+    .filter(contact => _.isEmpty(contact.contactDeactivatedDate) && (contact.contactType === contactType.APPOINTED_REPRESENTATIVE))
+    .sortBy(contact => new Date(contact.lastUpdatedTimestamp))
+    .last()
+    .value();
+
+  // Implicit chaining
+  const appointedRep = _(caseSummary.contacts)
+    .filter(contact => _.isEmpty(contact.contactDeactivatedDate) && (contact.contactType === contactType.APPOINTED_REPRESENTATIVE))
+    .sortBy(contact => new Date(contact.lastUpdatedTimestamp))
+    .last();  
+
+__________________
+Chai JS
+
+Expect:
+expect(value).to.equal('hello');
+expect(value).to.not.equal('goodbye');
+
+expect({ foo: 'bar' }).to.deep.equal({ foo: 'bar' }); // Deep equal
+expect([ 1, 2, 3 ]).to.eql([ 1, 2, 3 ]);       // Deep equal
+expect({ foo: 'bar' }).to.eql({ foo: 'bar' }); // Deep equal
+
+expect(booleanValue).to.be.true;
+expect(booleanValue).to.be.false;
+
+expect('').to.be.empty;
+expect([]).to.be.empty;
+expect({}).to.be.empty;
+
+expect(value).to.be.null;
+expect(value).to.be.undefined;
+expect(value).to.exist;  // neither null or undefined
+
+expect(value).to.be.a('string');
+expect(value).to.be.an('object');
+expect(value).to.be.instanceof(Array);
+expect(value).to.be.instanceof(Address);
+
+expect([ 1, 2, 3 ]).to.have.length(3);
+expect([1,2,3]).to.include(2);
+expect(['one', 'two', 'three'].to.include('two');
+
+expect('foobar').to.contain('foo');
+expect('foobar').to.match(/^foo/);
+
+Misc
+expect({ foo: { bar: { baz: 'quux' } } }).to.have.deep.property('foo.bar.baz', 'quux');
+expect({ foo: 'baz' }).to.have.property('foo').and.not.equal('bar');
+expect(deepObj).to.have.deep.property('green.tea', 'matcha');
+
+Satisfies custom test method:
+expect(names.all).to.satisfy(isArrayOfStrings);
+function isArrayOfStrings(items) {
+  return items.every( function(item) {
+    return (typeof item === 'string');
+  });
+}
+_________________
+
+Postgres:
+
+Get JSON representation of table data:
+select array_to_json(array_agg(row_to_json(t)))
+from (
+  select * from dcpscore.dcpsrole
+) t
+
+Get command separate values for one column (note that the field must be a string data type or else cast):
+SELECT string_agg(field::text, ',') FROM table
+
+To dump a database called testdb in a plain sql file:
+pg_dump -U postgres -F p testdb > testdb.sql
+For faster custom format:
+pg_dump -U postgres -F c testdb > testdb_custom.backup (much faster)
+
+To reload this database (make sure testdb exists):
+psql -U postgres -d testdb -f testdb.backup
+psql -U postgres -d testdb -f testdb_custom.backup
+
+To dump all roles and tablespaces:
+pg_dumpall -U postgres --roles-only > allroles.backup
+pg_dumpall -U postgres --tablespaces-only > alltablespaces.backup
+
+To get the list of active users connected to a database:
+select * from pg_stat_activity
+
+________________
+Install postgres on fedora (redhat)
+
+$ sesu -
+
+# yum install http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/pgdg-redhat95-9.5-2.noarch.rpm
+# yum install postgresql95-server postgresql95-contrib
+
+# /usr/pgsql-9.5/bin/postgresql95-setup initdb
+# systemctl enable postgresql-9.5.service
+# systemctl start postgresql-9.5.service
+# su - postgres
+$ psql
+postgres=# select * from pg_user;
+ usename  | usesysid | usecreatedb | usesuper | userepl | usebypassrls |  passwd  | valuntil | useconfig
+----------+----------+-------------+----------+---------+--------------+----------+----------+-----------
+ postgres |       10 | t           | t        | t       | t            | ******** |          |
+(1 row)
+
+- Restart postgres to ensure no connections
+  sesu -
+  systemctl list-units | grep postgres
+  systemctl stop postgresql-9.5.service
+  systemctl start postgresql-9.5.service
+
+_________________
+Unix (from git bash)
+
+rm -rf folderName (45 sec for 10000 files)
+find . -maxdepth 2 -name "node_modules"  # List all folders that match the name with max depth of 2
+find . -name *.exe -size +3M  # Find all .exe files recursively that are greater than 3 MB
+find . -name *.exe -size +3M -delete # Find all .exe files recursively that are greater than 3 MB and delete them
+
+Monitor a file and filter:
+tail -f file | grep "ssh"
+
+Find all files that were modified in the last 60 min
+find . -type f -mmin -60
+Delete all files that are older than 60 min
+find . -type f -mmin +60 -delete
+
+Get the size of all top-level folders:
+du -sh *
+
+Get the port a process is running on (you should do this as root):
+netstat -tulnp
+netstat -tulnp | grep smb
+netstat -tanp | grep 3001
+
+Check disk space
+df -h
+df -a -h (doesn't always return)
+
+Check cpu utilization
+top
+
+Add yourself to the sudoer group
+Login as root and type: usermod -aG wheel username
+
+Grep to a grep with OR matching of 2 patterns:
+grep -r "2d2a069c-612c-4ced-a35a-da697b56a5bb" | grep -e "ULPR command" -e "ULPR stdout"
+
+
+# Edit specific file names containing a substring
+grep -ri substring $(grep -ril substring | grep -v -e ^vimfiles -e ^bin -e ^.git | xargs)
+
+Trick to restart specific process:
+ps -eaf | grep prime | grep -v "grep" | tr -s " " " " | cut -d " " -f2 | xargs kill -15k
+
+Redirect stderr to stdout:  command-name 2>&1
+ 
+# sed for modifying stdout lines
+ls -a | sed "s/^/<----------- /"
+
+Replace all underscores in file names with dashes
+ls -1 | sed "s/_/-/g"
+vim ${ls -1 | sed "s/_/-/g" | xargs}
+
+ssh (openssh):
+ssh hostname -l username
+  - To avoid password, use public/private key
+
+tar (from git bash)
+  tar -cf archive.tar foo bar  # Create archive.tar from folder/file foo and bar (1 min for 10000 files)
+  tar -tvf archive.tar         # List all files in archive.tar verbosely
+  tar -xf archive.tar          # Extract all files from archive.tr (2.5 min for 10000 files)
+
+_________________
+Unix Shell Scripts
+
+git bash: #!/bin/sh
+
+(shift)up/down - scroll up/down line at a time
+(shift)pgup/pgdown - scroll up/down page at a time
+
+export NODE_PATH=`pwd`
+export PATH=$NODE_PATH/buster/bin:$PATH
+exec bash
+
+For Loop example:
+for file in $(grep -ril "acquireConnectionTimeout || 60000"); do
+echo item: $file
+done
+
+# Wile loop to process results line-by-line
+grep -ril TXN_0128 | while read -r line ; do echo "File: $line"; done
+
+Substitute a pattern in many files using sed:
+for file in $(grep -rl "60000" node_modules); do cat $file | sed -i "s/60000/60001/" $file; done;
+
+# Kill all unix processes that contain the substring "node"
+killall node
+
+To determine your shell:
+ps -p $$
+
+_________________
+Fast Windows Delete
+
+- In GIT Bash, type rm -rf folderName
+If not available, use the following in cmd prompt
+1. del /f/s/q foldername > nul
+2. Use windows to manuallydelete foldername
+
+Get list of all subfolders, excluding files:  dir /s /b /o:n /ad > f.txt
+
+___________________
+Keyboard items
+
+snake!
+2 at, 3 pounds, 4 money, 
+5 purse, 6 hat, 7 (sand),
+8 star, 9/0 pair,
+(lo)dash cross back
+
+snake! at the pound,
+money in purse or hat or sand
+star pair
+dash cross space
+
+________________________
+Nock
+
+To check request parameters...
+  testRequest = null;
+  nock(deliveryUri)
+    .post('')
+    .reply(function(uri, requestBody) {
+      testRequest = requestBody;
+      expect(requestBody).to.not.match(/usageTime/);
+      return [200];
+    });
+
+________________________
+Splunk
+
+- Reverse search order
+  1.  Perform Search and get list of events
+  2.  Add " | reverse" end of New Search and search again
+
+- Distinct messages and reverse sort order
+Create search text with something like this this...
+*"Queued steps that were eligible"  AND NOT "Invoked 0" | dedup _raw | reverse
+
+_________________________
+SQL Performance...
+
+- EXPLAIN ANALYZE <query>
+  EXPLAIN ANALYZE select * from table;
+    Planning time: 0.670 ms
+    Execution time: 0.388 ms <-- Most important metric, note that ANALYZE will actually execute the sql
+
+_________________________
+pm2...
+
+pm2 start src/index.js  --log-date-format="YYYY-MM-DD HH:mm Z"
+pm2 show 0
+tail -f /home/username/.pm2/logs/index-out.log
+  -- http://hostname:3630/api/v1/axiar in browser
+pm2 stop all
+
+_________________________
+powershell...
+
+To run a powershell file from bash or dos:
+powershell -file <filename.ps1>
+
+_________________________
+npm check updates...
+
+- First install this plug-in globally: npm install -g npm-check-updates
+- Run this command to update your package.json and ignore joi: ncu --upgradeAll --reject joi,knex,mocha
+
+_________________________
+Virtual Box/HyperV...
+Virtual Box and HyperV are very similar
+HyperV comes installed with Windows Pro
+Most developers prefer Virual Box since it can also run on Mac
+Docker for Windows uses HyperV
+
+__________________________
+Formatted stack traces...
+
+const PrettyError = require('pretty-error');
+var pe = new PrettyError();
+console.log(pe.render(err));
+__________________________
+VSCode
+- Collapase all code sections: ^K^0
+- Uncollapse all code sections: ^K^J
+- Uncollapse all code at cursor (e.g. full function): ^K^]
+__________________________
+
+To switch to root on aws vm
+sudo -i (make sure you exit back when done)
+__________________________
+To dump/load all database roles...
+pg_dumpall -g > roles.sql
+psql -U postgres -f roles.sql
+_____________________________________________________________________
+
+Vim
+- Delete all lines matching pattern, type :g/pattern/d
+- Delete all lines NOT matching pattern, type :g!/pattern/d
+- Reload current open file, :e!
+- Format a line to the left, :left. 
+- Format every line to the left in a file, :%le
+- To avoid auto line breaks, type :set tw=0
+- To move up/down a wrapped line, type gj or gk
+
+Copy/Paste yanked text:
+  Yank word: yiw
+  Replace with word: viwp
+
+Record a macro:
+qx            # start recording to register x
+:%s/OldString/NewString/g
+:wnext
+q             # stop recording
+@x            # playback to see if it works correctly
+999@x         # repeat 999 times to complete the job
+
+- Format a line to the left :left
+- Remove all white space at start every line, type :%left
+- Cut selected text when in visual mode, type d
+- Move before first occurrence of an "M" (can be used in visual mode), type tM
+- Move to the first occurrenct of an "M" (can be used in visual mode), type fM
+- Repeat last change in normal mode, type .
+- Repeat last command line change, type @:
+- Set up mapping to repeat last command (vscodevim does not currently support), type :noremap rr @:
+- delete lines from the current line to mark b, thype :.,'ad
+_________________
+VSCodeVim...
+
+close all windows: shift-esc
+Toggle vim on/off:  :toggleVim
+VimSurround:
+  Change surrounding ' to ": cs'"
+  Delete surrounding ": ds"
+  You surround it with ": ysiw"
+Substitute in marked range
+  On the first line type ma
+  On the last line type mb
+  'a,'bs/one/two
+Select multiple words that match cursor location: ^d (or gb)
+Go To definition: gd
+__________________
+
+Change color of mocha stack traces:
+- vim node_modules/mocha/lib/reporters/base.js +63
+- Change value of error stack to 91
+

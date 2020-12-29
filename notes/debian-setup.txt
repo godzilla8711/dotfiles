@@ -1,0 +1,85 @@
+  
+# Add the "add-apt-repository" command to Ubuntu if not present
+sudo apt-get install software-properties-common
+________________________________
+GIT...
+
+# Install GIT
+sudo apt update
+sudo apt install git
+git --version
+
+# Update git to latest version
+add-apt-repository ppa:git-core/ppa
+apt update
+apt install git
+
+To see git configs: git config -l --global
+To set:
+  git config --global user.name "Smith, Tom"
+  git config --global user.email "tom.smith@somewhere.com"
+  git config --global color.ui true
+  git config --global push.default current
+_________________________________
+
+# To upgrade node on ubuntu:
+sudo apt-get update
+
+# Completely remove node and all dependencies (e.g. python)
+sudo apt-get purge nodejs
+sudo apt-get auto-remove
+
+# Download and install latest Node 12.x 
+# Note that you can also do sudo apt-get upgrade nodejs
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install nodejs
+
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+apt notes (see https://techreviewpro.com/sudo-apt-get-update/)
+
+Primary apt commands...
+
+apt list --installed
+  - List all locallyinstalled packages
+
+sudo apt-get update
+  - Fetch the latest list of available packages from the repositories (does not affect any installed items): 
+
+sudo apt-get install <package name>
+  - Install a specific package: 
+  - For multiple package installations, you can just add the package names followed by a space, like:
+
+sudo apt-get upgrade <package name>
+  - Upgrade a specific package to the latest (avoid upgrading all packages): 
+
+sudo apt-get purge <package name>
+  - Fully delete a package, including any config settings
+
+sudo apt-get remove <package name>
+  - Delete package but leave settings 
+
+
+Misc apt commands...
+
+apt-cache search <insert search term here>
+  - Search for a package by name
+
+apt-cache show <package name>
+  - Show the details of a specific package
+sudo apt-get build-dep <package name>
+  - If you need to install the build dependencies for a package
+
+sudo apt-get check
+  - Verifies the integrity of the dependencies
+
+sudo apt-get autoclean
+  - Helps to clean up the .deb files of the packages that are no longers installed on your computer. You could utilize it to free up some space
+
+sudo apt-get clean
+  - Deletes all the packages that reside in your package cache. So, in order to install it, you need to re-download them all.
+
+apt-get autoremove 
+  - Remove any unreferenced packages
+
