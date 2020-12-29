@@ -3,11 +3,8 @@ ________________________________
 GIT...
 
 # Install GIT
-sudo yum update
-sudo apt install git
+sudo yum install git
 git --version
-
-# Update git to latest version (TBD)
 
 To see git configs: git config -l --global
 To set:
@@ -19,9 +16,42 @@ To set:
 _________________________________
 Node/NPM
 
+# Install Node
+sudo yum install curl
+curl –sL https://rpm.nodesource.com/setup_14.x | sudo bash -
+sudo yum install nodejs
+nodejs --version
+npm --verion
 
 ____________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________
-yum notes...
+yum notes (see https://www.linuxfordevices.com/tutorials/centos/yum-command)
+
+Primary yum commands...
+
+yum list installed
+  - List all locally installed packages
+
+sudo yum install <package name>
+  - Install a specific package: 
+  - For multiple package installations, you can just add the package names followed by a space, like:
+
+sudo yum update <package name>
+  - Fetch the latest list of available packages from the repositories
+
+sudo yum remove <package name>
+  - Delete package but leave settings 
+
+
+Misc apt commands...
+
+yum search <search term>
+  - Search for a package by name
+
+yum info <package name>
+  - Show the details of a specific package
+
+sudo yum autoremove 
+  - Remove any unreferenced packages
 
