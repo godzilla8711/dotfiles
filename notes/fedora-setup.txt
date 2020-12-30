@@ -23,6 +23,36 @@ sudo yum install nodejs
 nodejs --version
 npm --verion
 
+To see npm global config: npm config list --global
+Set the following:
+  npm config set package-lock false
+
+Install linting to support plug-ins
+npm list --depth=0 --global
+sudo npm install eslint -g
+
+_________________________________
+Java
+
+sudo apt install openjdk-8-jdk
+java -version
+_________________________________
+DOT_ files 
+- Run the deploy_dot_files.sh script
+_________________________________
+FZF/BAT (ensure to clone dotfiles repo first)
+
+# Install fzf binary
+./bin/fzf/install (answer "n" to everything)
+fzf (from command line to verify install after copying in DOT_ files)
+
+# Install bat
+sudo dpkg -i bin/bat_0.17.1_amd64.deb
+
+# Uninstall fzf/bat
+./bin/fzf/uninstall
+sudo dpkg -r bat
+
 ____________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________
