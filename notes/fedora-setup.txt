@@ -32,9 +32,9 @@ npm list --depth=0 --global
 sudo npm install eslint -g
 
 _________________________________
-Java
+Java JDK
 
-sudo apt install openjdk-8-jdk
+sudo yum install java-1.8.0-openjdk-devel
 java -version
 _________________________________
 DOT_ files 
