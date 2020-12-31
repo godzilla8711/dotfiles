@@ -71,6 +71,14 @@ sudo systemctl status postgresql-12
 sudo -u postgres psql
 \q
 
+_________________________________
+shellcheck
+
+- First check if already installed by typing "shellcheck"
+- If not...
+    sudo yum install epel-release OR sudo amazon-linux-extras install epel
+    yum install SpellCheck
+- Verify installed by typing "shellcheck" and also by vim'ing a .sh file
 
 ____________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________
