@@ -69,6 +69,7 @@ sudo dpkg -i bin/bat_0.17.1_amd64.deb
 # Uninstall fzf/bat
 ./bin/fzf/uninstall
 sudo dpkg -r bat
+
 _________________________________
 Postgres
 
