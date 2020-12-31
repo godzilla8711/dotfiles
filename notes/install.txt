@@ -3,7 +3,7 @@
 - git
 - nodejs/npm
 - java
-- fzf, bat (to support plugins -- see dotfiles for more info)
+- fzf (to support plugins -- see dotfiles for more info)
 - vim, curl (if not present)
 
 - postgres 

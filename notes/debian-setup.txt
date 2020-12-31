@@ -69,6 +69,7 @@ sudo dpkg -i bin/bat_0.17.1_amd64.deb
 # Uninstall fzf/bat
 ./bin/fzf/uninstall
 sudo dpkg -r bat
+
 _________________________________
 Postgres
 
@@ -85,6 +86,13 @@ sudo service postgresql --status-all | grep postgres
 sudo -u postgres psql
 \q
 
+_________________________________
+shellcheck
+
+- First check if already installed by typing "shellcheck"
+- If not...
+    sudo apt install shellcheck
+- Verify installed by typing "shellcheck" and also by vim'ing a .sh file and make an intentional typo
 
 ____________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________

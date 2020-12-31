@@ -50,7 +50,35 @@ fzf (from command line to verify install after copying in DOT_ files)
 Not available in yum, need later version of fedora with dnf pacakge manager (dandified yum)
 
 # Uninstall fzf/bat
-sudo yum remove bat
+./bin/fzf/uninstall
+
+_________________________________
+Postgres
+
+# Install Postgres DB server
+First update yum repo for postgres v12, see: https://techviewleo.com/install-postgresql-12-on-amazon-linux/
+sudo yum install postgresql12 postgresql12-server
+sudo /usr/pgsql-12/bin/postgresql-12-setup initdb
+sudo systemctl enable --now postgresql-12
+
+# Start/stop Postgres DB server
+sudo systemctl start postgresql-12
+sudo systemctl stop postgresql-12
+sudo systemctl restart postgresql-12
+sudo systemctl status postgresql-12
+
+# Test connection (postgres account is created on installation)
+sudo -u postgres psql
+\q
+
+_________________________________
+shellcheck
+
+- First check if already installed by typing "shellcheck"
+- If not...
+    sudo yum install epel-release OR sudo amazon-linux-extras install epel
+    yum install ShellCheck
+- Verify installed by typing "shellcheck" and also by vim'ing a .sh file and make an intentional typo
 
 ____________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________
