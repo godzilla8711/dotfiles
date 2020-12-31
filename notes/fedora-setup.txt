@@ -39,9 +39,6 @@ java -version
 _________________________________
 DOT_ files 
 - Run the deploy_dot_files.sh script
-- Change first occurrence of this in vimfiles/bundle/spacegray/colors/spacegray.vim (Linux only)
-   from ctermbg=234
-   to ctermbg=232
 _________________________________
 FZF/BAT (ensure to clone dotfiles repo first)
 
@@ -50,11 +47,10 @@ FZF/BAT (ensure to clone dotfiles repo first)
 fzf (from command line to verify install after copying in DOT_ files)
 
 # Install bat
-sudo dpkg -i bin/bat_0.17.1_amd64.deb
+Not available in yum, need later version of fedora with dnf pacakge manager (dandified yum)
 
 # Uninstall fzf/bat
-./bin/fzf/uninstall
-sudo dpkg -r bat
+sudo yum remove bat
 
 ____________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________
