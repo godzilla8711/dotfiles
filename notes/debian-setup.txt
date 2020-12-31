@@ -35,6 +35,10 @@ curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
 sudo apt install nodejs
 
+# Completely remove nodejs
+sudo apt purge nodejs
+sudo apt autoremove 
+
 To see npm global config: npm config list --global
 Set the following:
   npm config set package-lock false
@@ -65,6 +69,22 @@ sudo dpkg -i bin/bat_0.17.1_amd64.deb
 # Uninstall fzf/bat
 ./bin/fzf/uninstall
 sudo dpkg -r bat
+_________________________________
+Postgres
+
+# Install Postgres DB server
+sudo apt install postgresql postgresql-contrib
+
+# Start/stop Postgres DB server
+sudo service postgresql start
+sudo service postgresql stop
+sudo service postgresql restart
+sudo service postgresql --status-all | grep postgres
+
+# Test connection (postgres account is created on installation)
+sudo -u postgres psql
+\q
+
 
 ____________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________
@@ -100,6 +120,7 @@ apt-cache search <insert search term here>
 
 apt-cache show <package name>
   - Show the details of a specific package
+
 sudo apt-get build-dep <package name>
   - If you need to install the build dependencies for a package
 

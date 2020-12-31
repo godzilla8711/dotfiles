@@ -1,3 +1,4 @@
+#!/bin/bash
 
 TIMESTAMP=$(date +%s)
 BACKUP_FOLDER="$HOME/z_backup/temp"
@@ -21,13 +22,13 @@ cp "$DOTFILES_FOLDER/DOT_vimrc" "$HOME/.vimrc"
 echo -e "DONE\n"
 
 # Copy in the vimfiles needed by .vimrc if necessary.
-read -p "Do you wish to copy in vimfiles [y/n]? " answer
+read -r -p "Do you wish to copy in vimfiles [y/n]? " answer
 case $answer in
   [Yy]* ) 
     echo -n "Copying vimfiles..."; 
-    rm -rf $HOME/vimfiles; 
-    cp -rf $DOTFILES_FOLDER/vimfiles $HOME/vimfiles; 
-    sed -i "s/Normal        ctermbg=234/Normal        ctermbg=232/" $HOME/vimfiles/bundle/spacegray/colors/spacegray.vim;
+    rm -rf "$HOME/vimfiles"; 
+    cp -rf "$DOTFILES_FOLDER/vimfiles" "$HOME/vimfiles";
+    sed -i "s/Normal        ctermbg=234/Normal        ctermbg=232/" "$HOME/vimfiles/bundle/spacegray/colors/spacegray.vim";
     echo "DONE";;
   * ) 
     echo "Skipped copying vimfiles";; 
