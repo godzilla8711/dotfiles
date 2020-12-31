@@ -77,8 +77,8 @@ shellcheck
 - First check if already installed by typing "shellcheck"
 - If not...
     sudo yum install epel-release OR sudo amazon-linux-extras install epel
-    yum install SpellCheck
-- Verify installed by typing "shellcheck" and also by vim'ing a .sh file
+    yum install ShellCheck
+- Verify installed by typing "shellcheck" and also by vim'ing a .sh file and make an intentional typo
 
 ____________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________
