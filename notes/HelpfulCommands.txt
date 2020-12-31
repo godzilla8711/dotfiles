@@ -434,8 +434,16 @@ Substitute in marked range
 Select multiple words that match cursor location: ^d (or gb)
 Go To definition: gd
 __________________
+Stack traces...
 
 Change color of mocha stack traces:
 - vim node_modules/mocha/lib/reporters/base.js +63
 - Change value of error stack to 91
+__________________
+Get Linux OS/version...
+
+cat /etc/os-release
+OR, lsb_release -a
+OR, hostnamectl
+OR, uname -r
 
