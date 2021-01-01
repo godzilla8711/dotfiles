@@ -29,6 +29,7 @@ endfunction
 
 set history=100
 set ruler
+set scrolloff=3
 set nohlsearch  "don't highlight search results" home directory.
 
 " tabs and indenting
@@ -58,10 +59,7 @@ set runtimepath+=~/vimfiles/bundle/surround
 set runtimepath+=~/vimfiles/bundle/repeat
 
 " FZF plugin
-"   Run:    git clone --depth 1 https://github.com/junegunn/fzf.git ~/dotfiles/bin/fzf
-"   Run:    ~/dotfiles/bin/fzf/install
-"   Update: .vimrc: nnoremap <C-p> :<C-u>FZF<CR>
-"   Run:    git clone https://github.com/junegunn/fzf.vim.git ~/vimfiles/bundle/fzf
+"   Install FZF bin first (typing fzf should work from command line)
 set runtimepath+=~/dotfiles/bin/fzf
 set runtimepath+=~/vimfiles/bundle/fzf
 nnoremap <C-p> :<C-u>FZF<CR>

@@ -19,7 +19,8 @@ Set the following:
   git config --global user.name "Smith, Tom"
   git config --global user.email "tom.smith@somewhere.com"
   git config --global color.ui true
-  git config --global push.default current
+  git config --global pull.rebase false
+  # git config --global push.default current
 
 _________________________________
 Node/NPM
@@ -60,16 +61,16 @@ _________________________________
 FZF/BAT (ensure to clone dotfiles repo first)
 
 # Install fzf binary
-./bin/fzf/install (answer "n" to everything)
 fzf (from command line to verify install after copying in DOT_ files)
+  If not, $HOME/bin/fzf/install (answer "n" to everything)
 
-# Install bat
-sudo dpkg -i bin/bat_0.17.1_amd64.deb
+# Install bat (optional)
+Download the debian package: bat_0.17.1_amd64.deb
+sudo dpkg -i bat_0.17.1_amd64.deb
 
 # Uninstall fzf/bat
-./bin/fzf/uninstall
+$HOME/bin/fzf/uninstall
 sudo dpkg -r bat
-
 _________________________________
 Postgres
 
@@ -87,12 +88,15 @@ sudo -u postgres psql
 \q
 
 _________________________________
-shellcheck
+ShellCheck (bash linting)
 
 - First check if already installed by typing "shellcheck"
 - If not...
     sudo apt install shellcheck
 - Verify installed by typing "shellcheck" and also by vim'ing a .sh file and make an intentional typo
+
+_________________________________
+Solr
 
 ____________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________

@@ -11,7 +11,8 @@ To set:
   git config --global user.name "Smith, Tom"
   git config --global user.email "tom.smith@somewhere.com"
   git config --global color.ui true
-  git config --global push.default current
+  git config --global pull.rebase false
+  # git config --global push.default current
 
 _________________________________
 Node/NPM
@@ -43,14 +44,14 @@ _________________________________
 FZF/BAT (ensure to clone dotfiles repo first)
 
 # Install fzf binary
-./bin/fzf/install (answer "n" to everything)
 fzf (from command line to verify install after copying in DOT_ files)
+  If not, $HOME/bin/fzf/install (answer "n" to everything)
 
-# Install bat
+# Install bat (optional)
 Not available in yum, need later version of fedora with dnf pacakge manager (dandified yum)
 
 # Uninstall fzf/bat
-./bin/fzf/uninstall
+$HOME/bin/fzf/uninstall
 
 _________________________________
 Postgres

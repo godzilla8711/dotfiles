@@ -19,6 +19,13 @@ cp "$DOTFILES_FOLDER/DOT_bashrc" "$HOME/.bashrc"
 cp "$DOTFILES_FOLDER/DOT_bash_profile" "$HOME/.bash_profile"
 cp "$DOTFILES_FOLDER/DOT_bashrc_local" "$HOME/.bashrc_local"
 cp "$DOTFILES_FOLDER/DOT_vimrc" "$HOME/.vimrc"
+echo "DONE"
+
+# Install the fzf bin
+echo -ne "Installing fzf bin..."
+rm -rf "$HOME/bin/fzf"; 
+cp -rf "$DOTFILES_FOLDER/bin/fzf" "$HOME/bin"
+"$HOME/bin/fzf/install" --no-completion --no-update-rc --no-key-bindings 1> /dev/null # Suppresses stdout messages but not stderr
 echo -e "DONE\n"
 
 # Copy in the vimfiles needed by .vimrc if necessary.
