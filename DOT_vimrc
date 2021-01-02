@@ -50,6 +50,12 @@ let mapleader = ","
 nnoremap L $
 nnoremap H 0
 
+" Return to last edit position when opening files
+autocmd BufReadPost *
+\ if line("'\"") > 0 && line("'\"") <= line("$") |
+\   exe "normal! g`\"" |
+\ endif
+
 " Load plug-ins by copying from github each plugin into your ~/vimfiles/bundle
 " folder for windows or your ~/.vim/bundle folder for unix. Then update the
 " runpath to include each plugin.
