@@ -73,13 +73,35 @@ sudo -u postgres psql
 \q
 
 _________________________________
-shellcheck
+ShellCheck
 
 - First check if already installed by typing "shellcheck"
 - If not...
     sudo yum install epel-release OR sudo amazon-linux-extras install epel
     yum install ShellCheck
 - Verify installed by typing "shellcheck" and also by vim'ing a .sh file and make an intentional typo
+
+_________________________________
+Solr
+
+Ensure SOLR_HOME is defined after running deploy dotfiles script
+
+Install Solr as a service, this will also start it.
+sudo $SOLR_HOME/bin/install_solr_service.sh $SOLR_HOME/solr-8.7.0.zip
+OR, sudo $SOLR_HOME/bin/install_solr_service.sh $SOLR_HOME/solr-8.7.0.zip -f (if already exists as service called solr)
+
+Verify this page loads: http://hostname:8983/solr
+
+sudo service solr start
+sudo service solr stop
+sudo service solr status
+sudo chkconfig solr on # Make Solr start automatically upon reboot
+
+Optional: Add following to bottom of this file to prevent solr startup warnings.../etc/security/limits.conf
+solr hard nofile 65535
+solr soft nofile 65535
+solr hard nproc 65535
+solr soft nproc 65535
 
 ____________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________

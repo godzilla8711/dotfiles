@@ -23,3 +23,14 @@ git push -u origin master
 For nodegyp on windows...
 Run the following as Administrator:  npm install --global --production windows-build-tools
 
+Systemd on WSL 2...
+If you are running Ubuntu inside Windows using WSL, you will have SysV instead of systemd and your system will complain when you run the systemctl command (designed for Linux systems with systemd init). How do I fix the “System has not been booted with systemd” error? The simple answer is not to use the systemctl command. Use the equivalent SysV command instead simply called service.
+Systemd Command                | SysV/Sysvinit Command
+systemctl start service_name   | service service_name start
+systemctl stop service_name    | service service_name stop
+systemctl restart service_name | service service_name restart
+systemctl status service_name  | service service_name status
+systemctl enable service_name  | chkconfig service_name on
+systemctl disable service_name | chkconfig service_name off
+
+
