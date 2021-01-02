@@ -6,3 +6,5 @@ coverage/
 package-lock.json
 .nyc_output/
 .vscode/
+*.zip
+bin/*.zip

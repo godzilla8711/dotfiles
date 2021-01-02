@@ -3,6 +3,8 @@
 TIMESTAMP=$(date +%s)
 BACKUP_FOLDER="$HOME/z_backup/temp"
 DOTFILES_FOLDER="$HOME/dotfiles"
+SOLR_ZIP_FILE=solr-8.7.0.zip
+SOLR_DOWNLOAD_URL=https://mirrors.gigenet.com/apache/lucene/solr/8.7.0/solr-8.7.0.zip
 
 echo -e "Starting deployment...\n"
 mkdir -p "$BACKUP_FOLDER"
@@ -39,6 +41,28 @@ case $answer in
     echo "DONE";;
   * ) 
     echo "Skipped copying vimfiles";; 
+esac
+
+# Copy in the Solr files if necessary
+read -r -p "Do you wish to copy in solr [y/n]? " answerSolr
+case $answerSolr in
+  [Yy]* ) 
+    if [ ! -f "$DOTFILES_FOLDER/bin/$SOLR_ZIP_FILE" ]; then
+      echo "Downloading $SOLR_ZIP_FILE..."; 
+      wget "$SOLR_DOWNLOAD_URL" -P "$DOTFILES_FOLDER/bin" -O "$SOLR_ZIP_FILE"
+      mv "$SOLR_ZIP_FILE" "$DOTFILES_FOLDER/bin"
+      # curl -L -O -J "$SOLR_DOWNLOAD_URL"
+      echo "DONE";
+    fi
+
+    rm -rf "$HOME/bin/solr"; 
+    echo "Extracting $SOLR_ZIP_FILE to ~/bin/solr..."; 
+    unzip -q "$DOTFILES_FOLDER/bin/$SOLR_ZIP_FILE" -d "$HOME/bin";
+    tempSolrFolder="${SOLR_ZIP_FILE%.zip}";
+    mv "$HOME/bin/$tempSolrFolder" "$HOME/bin/solr"
+    echo "DONE";;
+  * ) 
+    echo "Skipped copying solr";; 
 esac
 
 echo -e "\nSuccessfully completed deployment"

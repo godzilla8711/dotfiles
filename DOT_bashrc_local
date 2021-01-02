@@ -1,5 +1,6 @@
 # Environment variables
 export JAVA_HOME=/usr/bin/java
+export SOLR_HOME=$HOME/bin/solr
 
 # Add qmk to your path
 export PATH="${PATH:+${PATH}:}$HOME/qmk_firmware/bin"
