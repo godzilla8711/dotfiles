@@ -98,20 +98,27 @@ ShellCheck (bash linting)
 _________________________________
 Solr
 
-Ensure SOLR_HOME is defined after running deploy dotfiles script
+Ensure SOLR_HOME and JAVA_HOME are defined after running deploy dotfiles script
 
-Install Solr as a service, this will also start it.
-sudo $SOLR_HOME/bin/install_solr_service.sh $SOLR_HOME/solr-8.7.0.zip
-OR, sudo $SOLR_HOME/bin/install_solr_service.sh $SOLR_HOME/solr-8.7.0.zip -f (if already exists as service called solr)
+Start Solr web app...
+  $HOME/bin/apache-solr/bin start -p 8984
+  Verify this page loads: http://hostname:8983/solr
+  $HOME/bin/apache-solr/bin stop
 
-Verify this page loads: http://hostname:8983/solr
+Optional Solr steps...
+  Install Solr as a service, this will also start it.
+  sudo $SOLR_HOME/bin/install_solr_service.sh $SOLR_HOME/solr-8.7.0.zip
+  OR, sudo $SOLR_HOME/bin/install_solr_service.sh $SOLR_HOME/solr-8.7.0.zip -f (if already exists as service called solr)
 
-Note that WSL uses the "service" command rather than "systemctl" used by ubuntu...
-sudo service solr status  # Check status of specific service
-sudo service --status-all # See all service statuses (up/+ and down/-)
-sudo service solr stop
-sudo service solr start
-sudo service solr restart
+  Note that WSL uses the "service" command rather than "systemctl" used by ubuntu...
+  sudo service solr status  # Check status of specific service
+  sudo service --status-all # See all service statuses (up/+ and down/-)
+  sudo service solr stop
+  sudo service solr start
+  sudo service solr restart
+
+Trouble shooting...
+  ps -efa | grep solr
 
 ____________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________

@@ -55,12 +55,12 @@ case $answerSolr in
       echo "DONE";
     fi
 
-    rm -rf "$HOME/bin/solr"; 
-    echo "Extracting $SOLR_ZIP_FILE to ~/bin/solr..."; 
+    rm -rf "$HOME/bin/apache-solr"; 
+    echo "Extracting $SOLR_ZIP_FILE to ~/bin/apache-solr..."; 
     unzip -q "$DOTFILES_FOLDER/bin/$SOLR_ZIP_FILE" -d "$HOME/bin";
     tempSolrFolder="${SOLR_ZIP_FILE%.zip}";
-    mv "$HOME/bin/$tempSolrFolder" "$HOME/bin/solr";
-    cp "$DOTFILES_FOLDER/bin/$SOLR_ZIP_FILE" "$HOME/bin/solr";
+    mv "$HOME/bin/$tempSolrFolder" "$HOME/bin/apache-solr";
+    cp "$DOTFILES_FOLDER/bin/$SOLR_ZIP_FILE" "$HOME/bin/apache-solr";
     echo "DONE";;
   * ) 
     echo "Skipped copying solr";; 
