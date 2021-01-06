@@ -50,6 +50,10 @@ let mapleader = ","
 nnoremap L $
 nnoremap H 0
 
+" Always show double quotes in JSON fields
+let g:vim_json_conceal = 0
+let g:vim_json_syntax_conceal = 0
+
 " Return to last edit position when opening files
 autocmd BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -133,11 +137,4 @@ let g:lightline = {
   \   'gitbranch': 'FugitiveHead'
   \ },
   \ }
-
-" Syntastic settings for linting
-" set runtimepath+=~/vimfiles/bundle/syntastic
-" map <C-l> :SyntasticCheck<CR>
-" let g:syntastic_javascript_checkers = ['eslint']
-" let g:syntastic_check_on_open = 0
-" let g:syntastic_check_on_wq = 0
 
