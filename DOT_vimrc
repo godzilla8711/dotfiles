@@ -50,6 +50,10 @@ let mapleader = ","
 nnoremap L $
 nnoremap H 0
 
+" Turn on autocompletion (Type ctrl-x ctrl-o when in insert mode)
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
 " Always show double quotes in JSON fields
 let g:vim_json_conceal = 0
 let g:vim_json_syntax_conceal = 0
@@ -91,6 +95,7 @@ set runtimepath+=~/vimfiles/bundle/polyglot
 
 " Misc plugins
 set runtimepath+=~/vimfiles/bundle/editorconfig
+set runtimepath+=~/vimfiles/bundle/auto-pairs
 
 " NERDTree Settings
 set runtimepath+=~/vimfiles/bundle/nerdtree
