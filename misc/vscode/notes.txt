@@ -1,0 +1,4 @@
+VSCode Installation Notes...
+
+- Install the listed the plugins listed in plugins.txt
+- On windows, copy settings.json to: $HOME/AppData/Roaming/Code/User/settings.json (or other target folder)

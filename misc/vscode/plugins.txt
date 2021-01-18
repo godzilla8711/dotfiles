@@ -1,0 +1,14 @@
+VSCode Plug-ins...
+
+- ESLint (Remote)
+- JSON Tools (Remote)
+- npm intellisense (Remote)
+- Poor Man's T-SQL Formatter (Remote)
+- Reload (Remote)
+- Remote-Development
+- Remote-SSH
+- Remote-WSL
+- Template String Converter (Remote)
+- TSLint (Remote)
+- Vim
+

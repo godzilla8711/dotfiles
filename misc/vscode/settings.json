@@ -1,0 +1,168 @@
+{
+    // Workspace settings
+    "workbench.startupEditor": "none",
+    "workbench.editor.enablePreview": true,
+    "workbench.sideBar.location": "left",
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorCustomizations": {
+      "statusBar.background": "#005f5f",
+      "statusBar.noFolderBackground": "#005f5f",
+      "statusBar.debuggingBackground": "#005f5f"
+    },
+
+    "explorer.confirmDelete": false,
+    "explorer.openEditors.visible": 0,
+    "breadcrumbs.enabled": true,
+    "breadcrumbs.symbolSortOrder": "type",
+
+    "files.autoSave": "onFocusChange",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.eol": "\n",
+
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "extensions.ignoreRecommendations": true,
+    "extensions.showRecommendationsOnlyOnDemand": true,
+    "extensions.autoUpdate": false,
+
+    "terminal.integrated.scrollback": 10000,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "git.ignoreLegacyWarning": true,
+    "zenMode.hideStatusBar": false,
+    "window.zoomLevel": 0,
+
+    // Editor settings
+    "editor.tabSize": 2,
+    "editor.cursorSurroundingLines": 6,
+    "editor.insertSpaces": true,
+    "editor.parameterHints.enabled": false,
+    "editor.wordWrapColumn": 160,
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false,
+    "editor.renderControlCharacters": false,
+    "editor.detectIndentation": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    "editor.largeFileOptimizations": false,
+    "editor.rulers": [
+      120
+    ],
+    "editor.gotoLocation.multipleDeclarations": "goto",
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "editor.gotoLocation.multipleImplementations": "goto",
+    "editor.gotoLocation.multipleReferences": "goto",
+    "editor.gotoLocation.multipleTypeDefinitions": "goto",
+    "editor.selectionHighlight": true,    // Helps vim editing performance
+    "editor.occurrencesHighlight": false, // Helps vim editing performance
+    "editor.hover.enabled": false,        // Helps vim editing performance
+
+    // Javasript and Type script settings
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
+    "typescript.tsserver.log": "verbose",
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
+    "eslint.migration.2_x": "off",
+    "eslint.lintTask.enable": true,
+    "scm.defaultViewMode": "tree",
+
+    // Excluded files for view and search
+    "files.exclude": {
+      "**/reports": true,
+      "**/.nyc_output": true,
+      "**/.git": true,
+      "**/.DS_Store": true,
+      "*/**/.sonar": true,
+      "*/**/.eslint*": true,
+      "*/**/.nsprc": true,
+      "*/**/CHANGELOG.*": true,
+      "*/**/code[mM]eta[dD]ata.*": true,
+      "*/**/gruntfile.js": true,
+      "*/**/jsconfig.json": true,
+      "*/**/package.json": false,
+      "*/**/README.md": false,
+      "*/**/*.code-workspace": true,
+      "*/**/Jenkinsfile": true,
+      "*/**/.vscode": true,
+      "*/**/.editorconfig": true,
+      "*/**/.scannerwork": true,
+      "*/**/nodemon.json": true,
+      "*/**/grunt-config.js": true,
+      "*/**/npmAudit*.json": true,
+      "*/**/sonar-project.properties": true,
+      "*/**/*.pem": true,
+      // Improve performance.
+      // "node_modules": false,
+      // "node_modules/[^l]*": true,
+      // "node_modules/l[^n]*": true
+    },
+    "search.exclude": {
+      "**/.git": true,
+      "**/reports": true,
+      "**/.nyc_output": true,
+      // Improve performance
+      // "node_modules": true
+    },
+
+    // Vim settings
+    "vim.sneak": false,
+    "vim.easymotion": false,
+    "vim.useCtrlKeys": true,
+    "vim.overrideCopy": true,
+    "vim.ignorecase": false,
+    "vim.disableExtension": false,
+    "vim.textwidth": 118,
+    "vim.leader": ",",
+    "vim.handleKeys": {   // False means don't use VIM for the control sequence
+      "<C-a>": false,
+      "<C-b>": true,
+      "<C-c>": false,
+      "<C-d>": true,
+      "<C-f>": true,
+      "<C-i>": false,
+      "<C-j>": false,
+      "<C-k>": false,
+      "<C-n>": false,
+      "<C-q>": false,
+      "<C-u>": true,
+      "<C-v>": false,
+      "<C-w>": false,
+      "<C-S-x>": false
+    },
+    "vim.normalModeKeyBindingsNonRecursive": [
+      {
+        "before": ["u"],
+        "after": [],
+        "commands": [{"command": "undo"}]
+      },{
+        "before": ["<C-r>"],
+        "after": [],
+        "commands": [{"command": "redo"}]
+      }
+    ],
+
+    // Vim performance start
+    "vim.foldfix": false,
+    "vim.statusBarColorControl": false,
+    // "vim.useSystemClipboard": false,
+    // "editor.renderWhitespace": "selection",
+    // "editor.cursorStyle": "line",
+    // "editor.cursorSmoothCaretAnimation": false,
+    "vim.useSystemClipboard": true, // Maybe set to false to help with performance.
+    // Vim performance end
+
+    // SQL plug-in settings
+    "poor-mans-t-sql-formatter.std.expandBetweenConditions": false,
+    "poor-mans-t-sql-formatter.std.indent": "  ",
+    "poor-mans-t-sql-formatter.std.spaceAfterExpandedComma": true,
+    "poor-mans-t-sql-formatter.confirmOnError": false,
+    "poor-mans-t-sql-formatter.std.spacesPerTab": 2
+
+    // Misc settings
+    // "http.proxy": "http://abc.com:80",
+    // "remote.SSH.remotePlatform": {
+    //   "def.com": "linux"
+    // }
+  }
