@@ -33,5 +33,6 @@ set -g mouse on
 # N - Previous search match occurrence
 # Spacebar - Start selection
 # Enter - Copy selection
+# ^t ] - Paste selection
 # Esc - Clear selection
 
