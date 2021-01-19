@@ -58,11 +58,14 @@ _________________________________
 DOT_ files 
 - Run the deploy_dot_files.sh script
 _________________________________
-FZF/BAT (ensure to clone dotfiles repo first)
+FZF/TMUX/BAT (ensure to clone dotfiles repo first)
 
 # Install fzf binary
 fzf (from command line to verify install after copying in DOT_ files)
   If not, $HOME/bin/fzf/install (answer "n" to everything)
+
+# Install tmux
+sudo apt install tmux
 
 # Install bat (optional)
 Download the debian package: bat_0.17.1_amd64.deb

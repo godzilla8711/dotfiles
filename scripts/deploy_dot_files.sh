@@ -17,10 +17,11 @@ cp "$HOME/.vimrc" "$BACKUP_FOLDER/vimrc_$TIMESTAMP"
 echo "DONE"
 
 echo -n "Copying in new dotfiles..."
-cp "$DOTFILES_FOLDER/DOT_bashrc" "$HOME/.bashrc"
-cp "$DOTFILES_FOLDER/DOT_bash_profile" "$HOME/.bash_profile"
-cp "$DOTFILES_FOLDER/DOT_bashrc_local" "$HOME/.bashrc_local"
-cp "$DOTFILES_FOLDER/DOT_vimrc" "$HOME/.vimrc"
+cp "$DOTFILES_FOLDER/DOTS/DOT_bashrc" "$HOME/.bashrc"
+cp "$DOTFILES_FOLDER/DOTS/DOT_bash_profile" "$HOME/.bash_profile"
+cp "$DOTFILES_FOLDER/DOTS/DOT_bashrc_local" "$HOME/.bashrc_local"
+cp "$DOTFILES_FOLDER/DOTS/DOT_tmux_conf" "$HOME/.tmux.conf"
+cp "$DOTFILES_FOLDER/DOTS/DOT_vimrc" "$HOME/.vimrc"
 echo "DONE"
 
 # Install the fzf bin

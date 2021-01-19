@@ -1,0 +1,37 @@
+# Use vi in copy mode
+set -g mode-keys vi
+# bind-key -t vi-copy 'v' begin-selection
+# bind-key -t vi-copy 'y' copy-selection
+
+# Remap Ctrl-b to Ctrl-t to help avoid vim overlap with backwards
+set-option -g prefix C-t
+bind-key C-t send-prefix
+unbind C-b
+
+# Enable mouse support
+set -g mouse on
+
+# Helpful tmux commands
+#
+# tmux - Start tmux
+# exit - Exit tmux
+# tmux ls - List all running sessions and server
+# tmux kill-server - to gracefully kill all tmux open sessions and server
+
+# ^t " - Split pane horizontally
+# ^t x - Close current pane
+# ^t Arrow Keys - Switch to pane in direction
+# ^t ^Arrow Keys - Resize current pane
+# ^t ; - Toggle to last active pane
+
+# ^t [ - Enter copy mode
+# q - Quit copy mode
+# hjkl or Arrow Keys - Move direction in copy mode
+# / - Search forward
+# ? - Search backward
+# n - Next search match occurrence
+# N - Previous search match occurrence
+# Spacebar - Start selection
+# Enter - Copy selection
+# Esc - Clear selection
+

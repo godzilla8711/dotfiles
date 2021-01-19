@@ -8,6 +8,7 @@ export PATH="${PATH:+${PATH}:}$HOME/qmk_firmware/bin"
 # Aliases
 alias vimfzf='vim $(fzf)'
 alias gitvim='vim $(git status --porcelain | awk '\''{print $2}'\'')'
+alias gittmux='tmux kill-server ; tmux new -d -s 'tmuxvim' && tmux split-window -v -p 40 && tmux select-pane -t 0 && tmux attach'
 
 # Disable ^S which stops all terminal output to avoid vim freezes from ^S.
 # Use ^Q if this ever occurs in vim to unfreeze.
