@@ -58,7 +58,7 @@ _________________________________
 DOT_ files 
 - Run the deploy_dot_files.sh script
 _________________________________
-FZF/TMUX/BAT (ensure to clone dotfiles repo first)
+FZF/TMUX/XMLLINT/BAT (ensure to clone dotfiles repo first)
 
 # Install fzf binary
 fzf (from command line to verify install after copying in DOT_ files)
@@ -66,6 +66,9 @@ fzf (from command line to verify install after copying in DOT_ files)
 
 # Install tmux
 sudo apt install tmux
+
+# Install xmllit
+sudo apt install libxml2-utils
 
 # Install bat (optional)
 Download the debian package: bat_0.17.1_amd64.deb
@@ -104,9 +107,9 @@ Solr
 Ensure SOLR_HOME and JAVA_HOME are defined after running deploy dotfiles script
 
 Start Solr web app...
-  $HOME/bin/apache-solr/bin start -p 8984
+  $HOME/bin/apache-solr/bin solr -p 8983
   Verify this page loads: http://hostname:8983/solr
-  $HOME/bin/apache-solr/bin stop
+  $HOME/bin/apache-solr/bin solr stop
 
 Optional Solr steps...
   Install Solr as a service, this will also start it.

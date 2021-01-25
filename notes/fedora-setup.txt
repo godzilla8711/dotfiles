@@ -41,7 +41,7 @@ _________________________________
 DOT_ files 
 - Run the deploy_dot_files.sh script
 _________________________________
-FZF/TMUX/BAT (ensure to clone dotfiles repo first)
+FZF/TMUX/XMLINT/BAT (ensure to clone dotfiles repo first)
 
 # Install fzf binary
 fzf (from command line to verify install after copying in DOT_ files)
@@ -50,10 +50,13 @@ fzf (from command line to verify install after copying in DOT_ files)
 # Install tmux
 sudo yum install tmux
 
+# Install xmllint
+sudo yum install libxml2
+
 # Install bat (optional)
 Not available in yum, need later version of fedora with dnf pacakge manager (dandified yum)
 
-# Uninstall fzf/bat
+# Uninstall fzf
 $HOME/bin/fzf/uninstall
 
 _________________________________
@@ -87,13 +90,17 @@ ShellCheck
 _________________________________
 Solr
 
-Ensure SOLR_HOME is defined after running deploy dotfiles script
+Ensure SOLR_HOME and JAVA_HOME are defined after running deploy dotfiles script
 
-Install Solr as a service, this will also start it.
-sudo $SOLR_HOME/bin/install_solr_service.sh $SOLR_HOME/solr-8.7.0.zip
-OR, sudo $SOLR_HOME/bin/install_solr_service.sh $SOLR_HOME/solr-8.7.0.zip -f (if already exists as service called solr)
+Start Solr web app...
+  $HOME/bin/apache-solr/bin solr -p 8983
+  Verify this page loads: http://hostname:8983/solr
+  $HOME/bin/apache-solr/bin solr stop
 
-Verify this page loads: http://hostname:8983/solr
+Optional Solr steps...
+  Install Solr as a service, this will also start it.
+  sudo $SOLR_HOME/bin/install_solr_service.sh $SOLR_HOME/solr-8.7.0.zip
+  OR, sudo $SOLR_HOME/bin/install_solr_service.sh $SOLR_HOME/solr-8.7.0.zip -f (if already exists as service called solr)
 
 sudo service solr start
 sudo service solr stop

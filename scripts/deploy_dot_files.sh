@@ -13,6 +13,7 @@ echo -n "Backing up existing dotfiles..."
 cp "$HOME/.bashrc" "$BACKUP_FOLDER/bashrc_$TIMESTAMP"
 cp "$HOME/.bash_profile" "$BACKUP_FOLDER/bash_profile_$TIMESTAMP"
 cp "$HOME/.bashrc_local" "$BACKUP_FOLDER/bashrc_local_$TIMESTAMP"
+cp "$HOME/.tmux.conf" "$BACKUP_FOLDER/tmux_conf_$TIMESTAMP"
 cp "$HOME/.vimrc" "$BACKUP_FOLDER/vimrc_$TIMESTAMP"
 echo "DONE"
 
