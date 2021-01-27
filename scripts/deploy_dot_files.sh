@@ -55,6 +55,11 @@ esac
 read -r -p "Do you wish to copy in solr [y/n]? " answerSolr
 case $answerSolr in
   [Yy]* ) 
+    # Backup the solr configsets before copying
+    cp -rf "$HOME/bin/apache-solr/server/solr/configsets" configsets; 
+    zip -r -q "$BACKUP_FOLDER/configsets_$TIMESTAMP.zip" configsets; 
+    rm -rf configsets
+
     if [ ! -f "$DOTFILES_FOLDER/bin/$SOLR_ZIP_FILE" ]; then
       echo "Downloading $SOLR_ZIP_FILE..."; 
       wget "$SOLR_DOWNLOAD_URL" -P "$DOTFILES_FOLDER/bin" -O "$SOLR_ZIP_FILE"
