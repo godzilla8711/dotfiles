@@ -6,7 +6,7 @@ export SOLR_HOME=$HOME/bin/apache-solr/server/solr
 export PATH="${PATH:+${PATH}:}$HOME/qmk_firmware/bin"
 
 # Aliases
-alias vimfzf='vim $(fzf)'
+alias fzfvim='vim $(fzf)'
 alias gitvim='vim $(git status --porcelain | awk '\''{print $2}'\'')'
 alias tmuxvim='tmux kill-server ; tmux new -d -s '\''tmuxvim'\'' && tmux split-window -v -p 40 && tmux select-pane -t 0 && tmux attach'
 

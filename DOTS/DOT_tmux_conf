@@ -20,6 +20,7 @@ set -g mouse on
 
 # ^t " - Split pane horizontally
 # ^t x - Close current pane
+# ^t z - Toggle zoom
 # ^t Arrow Keys - Switch to pane in direction
 # ^t ^Arrow Keys - Resize current pane
 # ^t ; - Toggle to last active pane

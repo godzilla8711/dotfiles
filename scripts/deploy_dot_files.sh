@@ -5,24 +5,30 @@ BACKUP_FOLDER="$HOME/z_backup/temp"
 DOTFILES_FOLDER="$HOME/dotfiles"
 SOLR_ZIP_FILE=solr-8.7.0.zip
 SOLR_DOWNLOAD_URL=https://mirrors.gigenet.com/apache/lucene/solr/8.7.0/solr-8.7.0.zip
+IS_COPY_BASHRC=Y
 
 echo -e "Starting deployment...\n"
 mkdir -p "$BACKUP_FOLDER"
 
-echo -n "Backing up existing dotfiles..."
-cp "$HOME/.bashrc" "$BACKUP_FOLDER/bashrc_$TIMESTAMP"
-cp "$HOME/.bash_profile" "$BACKUP_FOLDER/bash_profile_$TIMESTAMP"
-cp "$HOME/.bashrc_local" "$BACKUP_FOLDER/bashrc_local_$TIMESTAMP"
-cp "$HOME/.tmux.conf" "$BACKUP_FOLDER/tmux_conf_$TIMESTAMP"
-cp "$HOME/.vimrc" "$BACKUP_FOLDER/vimrc_$TIMESTAMP"
-echo "DONE"
+echo -n "Copying in dotfiles..."
 
-echo -n "Copying in new dotfiles..."
-cp "$DOTFILES_FOLDER/DOTS/DOT_bashrc" "$HOME/.bashrc"
-cp "$DOTFILES_FOLDER/DOTS/DOT_bash_profile" "$HOME/.bash_profile"
-cp "$DOTFILES_FOLDER/DOTS/DOT_bashrc_local" "$HOME/.bashrc_local"
+if [ $IS_COPY_BASHRC == 'Y' ]; then
+  cp "$HOME/.bashrc" "$BACKUP_FOLDER/bashrc_$TIMESTAMP"
+  cp "$DOTFILES_FOLDER/DOTS/DOT_bashrc" "$HOME/.bashrc"
+
+  cp "$HOME/.bash_profile" "$BACKUP_FOLDER/bash_profile_$TIMESTAMP"
+  cp "$DOTFILES_FOLDER/DOTS/DOT_bash_profile" "$HOME/.bash_profile"
+
+  cp "$HOME/.bashrc_local" "$BACKUP_FOLDER/bashrc_local_$TIMESTAMP"
+  cp "$DOTFILES_FOLDER/DOTS/DOT_bashrc_local" "$HOME/.bashrc_local"
+fi
+
+cp "$HOME/.tmux.conf" "$BACKUP_FOLDER/tmux_conf_$TIMESTAMP"
 cp "$DOTFILES_FOLDER/DOTS/DOT_tmux_conf" "$HOME/.tmux.conf"
+
+cp "$HOME/.vimrc" "$BACKUP_FOLDER/vimrc_$TIMESTAMP"
 cp "$DOTFILES_FOLDER/DOTS/DOT_vimrc" "$HOME/.vimrc"
+
 echo "DONE"
 
 # Install the fzf bin
