@@ -1,9 +1,13 @@
-  
 ________________________________
 GIT...
 
-# Install GIT
+# Install GIT, VIM, WGET, CURL, ZIP, UNZIP
 sudo yum install git
+sudo yum install vim
+sudo yum install wget
+sudo yum install curl (may already be installed)
+sudo yum install zip (may already be installed)
+sudo yum install unzip (may already be installed)
 git --version
 
 To see git configs: git config -l --global
@@ -15,13 +19,17 @@ To set:
   git config --global core.editor vim
 
 _________________________________
+RECURSIVELY clone the dotfiles git repo...
+
+cd ~
+git clone https://github.com/godzilla8711/dotfiles.git --recursive
+_________________________________
 Node/NPM
 
 # Install Node
-sudo yum install curl
-curl –sL https://rpm.nodesource.com/setup_14.x | sudo bash -
+curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
 sudo yum install nodejs
-nodejs --version
+node --version
 npm --verion
 
 To see npm global config: npm config list --global

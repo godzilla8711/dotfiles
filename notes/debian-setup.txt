@@ -9,6 +9,9 @@ sudo apt update
 sudo apt install git
 git --version
 
+# Ensure the following are installed: vim, zip, unzip, wget, curl
+# If not, sudo yum install <package name>
+
 # Update git to latest version
 sudo add-apt-repository ppa:git-core/ppa
 sudo apt update
@@ -21,6 +24,11 @@ Set the following:
   git config --global color.ui true
   git config --global pull.rebase false
   git config --global core.editor vim
+_________________________________
+RECURSIVELY clone the dotfiles git repo...
+
+cd ~
+git clone https://github.com/godzilla8711/dotfiles.git --recursive
 
 _________________________________
 Node/NPM
