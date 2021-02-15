@@ -1,8 +1,8 @@
 #!/bin/bash
 
 DOTFILES_FOLDER="$HOME/dotfiles"
-SOLR_ZIP_FILE=solr-8.7.0.zip
-SOLR_DOWNLOAD_URL=https://mirrors.gigenet.com/apache/lucene/solr/8.7.0/solr-8.7.0.zip
+SOLR_ZIP_FILE=solr-8.8.0.zip
+SOLR_DOWNLOAD_URL=https://mirrors.gigenet.com/apache/lucene/solr/8.8.0/solr-8.8.0.zip
 
 rm -rf dotfiles_new; 
 rm -rf dotfiles_new.zip; 

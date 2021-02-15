@@ -1,5 +1,6 @@
 # Environment variables
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 # Should refer to the java root folder and not the bin folder
+# export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 # Ubuntu (Debian) -- Should refer to the java root folder and not the bin folder
+export JAVA_HOME=/etc/alternatives/java_sdk_1.8.0_openjdk # RHEL 7 (Fedora) -- Should refer to the java root folder and not the bin folder
 export SOLR_HOME=$HOME/bin/apache-solr/server/solr
 
 # Add qmk to your path

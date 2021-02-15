@@ -9,7 +9,7 @@ sudo apt update
 sudo apt install git
 git --version
 
-# Ensure the following are installed: vim, zip, unzip, wget, curl
+# Ensure the following are installed: vim, zip, unzip, wget, curl, lsof
 # If not, sudo yum install <package name>
 
 # Update git to latest version
