@@ -2,6 +2,7 @@ ________________________________
 GIT...
 
 # Install GIT, VIM, WGET, CURL, ZIP, UNZIP, LSOF
+sudo yum update
 sudo yum install git
 sudo yum install vim
 sudo yum install wget
@@ -18,7 +19,6 @@ To set:
   git config --global color.ui true
   git config --global pull.rebase false
   git config --global core.editor vim
-
 _________________________________
 RECURSIVELY clone the dotfiles git repo...
 
@@ -71,7 +71,6 @@ $HOME/bin/fzf/uninstall
 _________________________________
 Postgres
 
-
 RHEL 7.x postres install.. 
   sudo yum install -y https://download.postgresql.org/pub/repos/yum/12/redhat/rhel-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
   sudo yum install postgresql12 postgresql12-server postgresql12-contrib postgresql12-libs -y
@@ -102,6 +101,22 @@ AWS AMI postgres install...
 # Test connection (postgres account is created on installation)
 sudo -u postgres psql
 \q
+
+_________________________________
+Install latest version of vim...
+
+sudo yum install gcc make ncurses ncurses-devel
+sudo yum remove vim-enhanced vim-common vim-filesystem
+cd ~
+sudo git clone https://github.com/vim/vim.git
+sudo chmod -R 777 vim
+cd vim
+make
+sudo make install
+rm -rf vim
+exit shell and enter back in
+type "vim" and see if it shows latest version
+
 _________________________________
 ShellCheck
 
@@ -112,7 +127,7 @@ ShellCheck
     wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
     sudo yum install epel-release-latest-7.noarch.rpm
     sudo yum repolist
-    yum install ShellCheck
+    sudo yum install ShellCheck
 
   AWS AMI install...
     sudo yum install epel-release OR sudo amazon-linux-extras install epel
