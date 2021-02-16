@@ -104,19 +104,23 @@ sudo -u postgres psql
 
 _________________________________
 Install latest version of vim...
+  sudo yum install gcc make ncurses ncurses-devel
+  sudo yum remove vim-enhanced vim-common vim-filesystem
+  cd ~
+  sudo git clone https://github.com/vim/vim.git
+  sudo chmod -R 777 vim
+  cd vim
+  make
+  sudo make install
+  rm -rf vim
+  exit shell and enter back in
+  type "vim" and see if it shows latest version
 
-sudo yum install gcc make ncurses ncurses-devel
-sudo yum remove vim-enhanced vim-common vim-filesystem
-cd ~
-sudo git clone https://github.com/vim/vim.git
-sudo chmod -R 777 vim
-cd vim
-make
-sudo make install
-rm -rf vim
-exit shell and enter back in
-type "vim" and see if it shows latest version
-
+Install latest version of tmux...
+  Download RHEL binary mentioned here...https://github.com/tmux/tmux/wiki/Installing 
+  e.g. wget http://galaxy4.net/repo/RHEL/7/x86_64/tmux-3.1b-1.el7.x86_64.rpm
+       sudo yum remove tmux
+       sudo rpm -ivh tmux-3.1b-1.el7.x86_64.rpm
 _________________________________
 ShellCheck
 
