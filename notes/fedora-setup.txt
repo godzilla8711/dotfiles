@@ -149,6 +149,8 @@ To bring up CoC config file (once in use intellisense to get commands, e.g. add 
 To list CoC commands
   :CocList commands
 
+Nice shortcuts: gd, K
+
 Install ripgrep so that you can use :Rg
   Add the repo based on the Centos 7 directions on the ripgrep github site
   sudo yum install --downloadonly sudo yum install --downloadonly --downloaddir=/tmp ripgrep
