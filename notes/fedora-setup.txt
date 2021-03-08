@@ -138,6 +138,22 @@ ShellCheck
     yum install ShellCheck
 - Verify installed by typing "shellcheck" and also by vim'ing a .sh file and make an intentional typo
 _________________________________
+CoC vim plugin and RigGrep
+
+In vim, type the following
+  :CocInstall coc-tsserver coc-json
+
+To bring up CoC config file (once in use intellisense to get commands, e.g. add line that starts with "javascript")
+  :CocConfig
+
+To list CoC commands
+  :CocList commands
+
+Install ripgrep so that you can use :Rg
+  Add the repo based on the Centos 7 directions on the ripgrep github site
+  sudo yum install --downloadonly sudo yum install --downloadonly --downloaddir=/tmp ripgrep
+  sudo yum install /tmp/ripgrep-12.1.1-1.el7.x86_64.rpm
+_________________________________
 Solr
 
 Ensure SOLR_HOME and JAVA_HOME are defined after running deploy dotfiles script

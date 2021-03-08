@@ -118,7 +118,7 @@ sudo apt install vim
 sudo apt remove vim
 sudo add-apt-repository --remove ppa:jonathonf/vim
 _________________________________
-CoC vim plugin
+CoC vim plugin and RigGrep
 
 In vim, type the following
   :CocInstall coc-tsserver coc-json
