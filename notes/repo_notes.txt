@@ -16,6 +16,7 @@ git submodule add https://github.com/junegunn/fzf.vim.git ./vimfiles/bundle/fzf
 git submodule add https://github.com/preservim/nerdtree.git ./vimfiles/bundle/nerdtree
 git submodule add https://github.com/dense-analysis/ale.git ./vimfiles/bundle/ale
 git submodule add https://github.com/jiangmiao/auto-pairs.git ./vimfiles/bundle/auto-pairs
+git submodule add https://github.com/neoclide/coc.nvim.git ./vimfiles/bundle/coc-nvim
 
 # Use v4.16.0 of polyglot due to stablility issues with latest
 git submodule add https://github.com/sheerun/vim-polyglot.git ./vimfiles/bundle/polyglot 

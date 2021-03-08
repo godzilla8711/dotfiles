@@ -108,7 +108,30 @@ ShellCheck (bash linting)
 - If not...
     sudo apt install shellcheck
 - Verify installed by typing "shellcheck" and also by vim'ing a .sh file and make an intentional typo
+_________________________________
+Upgrade to latest version of VIM
 
+sudo add-apt-repository ppa:jonathonf/vim
+sudo apt install vim
+
+# Uninstall
+sudo apt remove vim
+sudo add-apt-repository --remove ppa:jonathonf/vim
+_________________________________
+CoC vim plugin
+
+In vim, type the following
+  :CocInstall coc-tsserver coc-json
+
+To bring up CoC config file (once in use intellisense to get commands, e.g. add line that starts with "javascript")
+  :CocConfig
+
+To list CoC commands
+  :CocList commands
+
+Install ripgrep so that you can use :Rg
+  curl -LO https://github.com/BurntSushi/ripgrep/releases/download/12.1.1/ripgrep_12.1.1_amd64.deb
+  sudo dpkg -i ripgrep_12.1.1_amd64.deb
 _________________________________
 Solr
 
