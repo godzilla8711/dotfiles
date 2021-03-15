@@ -146,8 +146,6 @@ sudo apt-get install neovim
 # Have neovim use the vim config and plug-ins
 mkdir -p ~/.config/nvim
 cp ~/dotfiles/DOTS/DOT_init_vim ~/.config/nvim/init.vim
-
-
 _________________________________
 Helpful shortcuts
 
@@ -156,8 +154,6 @@ Helpful shortcuts
                          <backspace> Go up folder, <enter> go down folder
 <space>ef - Coc explorer floating
 <C-w>h/l - Move to different buffer
-
-
 _________________________________
 Solr
 
