@@ -6,6 +6,9 @@ export SOLR_HOME=$HOME/bin/apache-solr/server/solr
 # Add qmk to your path
 export PATH="${PATH:+${PATH}:}$HOME/qmk_firmware/bin"
 
+# Add global npm packages to your path
+export PATH="${PATH:+${PATH}:}$HOME/.npm-global/bin"
+
 # Aliases
 alias fzfvim='vim $(fzf)'
 alias gitvim='vim $(git status --porcelain | awk '\''{print $2}'\'')'

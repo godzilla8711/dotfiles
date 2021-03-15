@@ -34,13 +34,15 @@ node --version
 npm --verion
 
 To see npm global config: npm config list --global
-Set the following:
-  npm config set package-lock false
+- Create folder ~/.npm-global
+- Set the following:
+    npm config set package-lock false
+    npm config set prefix ~/.npm-global
 
 Install linting to support plug-ins
 npm list --depth=0 --global
-sudo npm install eslint -g
-
+npm install -g eslint
+npm install -g bash-language-server
 _________________________________
 Java JDK
 

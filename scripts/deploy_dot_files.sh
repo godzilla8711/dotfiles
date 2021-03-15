@@ -1,8 +1,8 @@
 #!/bin/bash
 
 TIMESTAMP=$(date +%s)
-BACKUP_FOLDER="$HOME/z_backup/temp"
-DOTFILES_FOLDER="$HOME/dotfiles"
+BACKUP_FOLDER=$HOME/z_backup/temp
+DOTFILES_FOLDER=$HOME/dotfiles
 SOLR_ZIP_FILE=solr-8.8.1.zip
 SOLR_DOWNLOAD_URL=https://mirrors.gigenet.com/apache/lucene/solr/8.8.1/solr-8.8.1.zip
 IS_COPY_BASHRC=Y
@@ -79,7 +79,7 @@ case $answerSolr in
     cp "$DOTFILES_FOLDER/bin/$SOLR_ZIP_FILE" "$HOME/bin/apache-solr";
     echo "DONE";;
   * ) 
-    echo "Skipped copying solr";; 
+    echo "Skipped copying solr"; 
 esac
 
 echo -e "\nSuccessfully completed deployment"
