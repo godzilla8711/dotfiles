@@ -6,6 +6,9 @@ export SOLR_HOME=$HOME/bin/apache-solr/server/solr
 # Add qmk to your path
 export PATH="${PATH:+${PATH}:}$HOME/qmk_firmware/bin"
 
+# Add neovim to your path
+export PATH="${PATH:+${PATH}:}$HOME/bin/neovim"
+
 # Add global npm packages to your path
 export PATH="${PATH:+${PATH}:}$HOME/.npm-global/bin"
 
@@ -13,6 +16,7 @@ export PATH="${PATH:+${PATH}:}$HOME/.npm-global/bin"
 alias fzfvim='vim $(fzf)'
 alias gitvim='vim $(git status --porcelain | awk '\''{print $2}'\'')'
 alias tmuxvim='tmux kill-server ; tmux new -d -s '\''tmuxvim'\'' && tmux split-window -v -p 40 && tmux select-pane -t 0 && tmux attach'
+alias nvim='nvim.appimage'
 
 # Disable ^S which stops all terminal output to avoid vim freezes from ^S.
 # Use ^Q if this ever occurs in vim to unfreeze.

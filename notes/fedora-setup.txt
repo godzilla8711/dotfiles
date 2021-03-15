@@ -158,6 +158,17 @@ Install ripgrep so that you can use :Rg
   sudo yum install --downloadonly sudo yum install --downloadonly --downloaddir=/tmp ripgrep
   sudo yum install /tmp/ripgrep-12.1.1-1.el7.x86_64.rpm
 _________________________________
+Neovim install
+
+# For RHEL 7.x the universal appimage can be used
+mkdir ~/bin/neovim
+cp ~/dotfiles/bin/nvim.appimage ~/bin/neovim
+chmod 764 ~/bin/neovim/nvim.appimage
+
+# Have neovim use the vim config and plug-ins
+mkdir -p ~/.config/nvim
+cp ~/dotfiles/DOTS/DOT_init_vim ~/.config/nvim/init.vim
+_________________________________
 Solr
 
 Ensure SOLR_HOME and JAVA_HOME are defined after running deploy dotfiles script
