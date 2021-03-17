@@ -37,9 +37,6 @@
 [submodule "vimfiles/auto-pairs"]
 	path = vimfiles/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
-[submodule "vimfiles/bundle/auto-pairs"]
-	path = vimfiles/bundle/auto-pairs
-	url = https://github.com/jiangmiao/auto-pairs.git
 [submodule "notes/vimfiles/bundle/coc-nvim"]
 	path = notes/vimfiles/bundle/coc-nvim
 	url = https://github.com/neoclide/coc.nvim.git
