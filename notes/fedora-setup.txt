@@ -164,6 +164,13 @@ Neovim install
 mkdir ~/bin/neovim
 cp ~/dotfiles/bin/nvim.appimage ~/bin/neovim
 chmod 764 ~/bin/neovim/nvim.appimage
+ln -s ~/bin/neovim/nvim.appimage ~/bin/neovim/nvim
+
+Note: If the above doesn't work, do the following...
+  rm ~/bin/neovim/nvim
+  ~/bin/neovim/nvim.appimage --appimage-extract
+  ~/bin/neovim/squashfs-root/AppRun --version
+  ln -s ~/bin/neovim/squashfs-root/AppRun ~/bin/neovim/nvim
 
 # Have neovim use the vim config and plug-ins
 mkdir -p ~/.config/nvim
