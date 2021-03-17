@@ -89,9 +89,6 @@ colorscheme spacegray
 " Language pack plugin
 let g:polyglot_disabled = ['markdown']
 set runtimepath+=~/vimfiles/bundle/polyglot
-" set runtimepath+=~/vimfiles/bundle/javascript
-" set runtimepath+=~/vimfiles/bundle/json
-" set runtimepath+=~/vimfiles/bundle/jsx
 
 " Misc plugins
 set runtimepath+=~/vimfiles/bundle/editorconfig
@@ -102,10 +99,6 @@ set runtimepath+=~/vimfiles/bundle/coc-nvim
 set runtimepath+=~/vimfiles/bundle/nerdtree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" let NERDTreeIgnore=['node_modules$[[dir]]', '.git$[[dir]]']
-" let NERDTreeIgnore=['.git$[[dir]]']
-" let g:jsx_ext_required = 0
-" autocmd vimenter * NERDTree
 
 " ALE settings for linting
 set runtimepath+=~/vimfiles/bundle/ale
@@ -115,17 +108,9 @@ let g:ale_lint_on_save = 1
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_file_type_changed = 1
 let g:ale_lint_on_text_changed = 'always'
-" let g:ale_lint_on_text_changed = 'never'
-" let g:ale_lint_on_save = 0
-" let g:ale_lint_on_enter = 0
-" let g:ale_lint_on_file_type_changed = 0
-" let b:ale_linters = ['eslint']
-"" let g:ale_lint_delay = 200
-"" let g:ale_history_enabled = 0
 
 " Lightline status bar plugin
 set runtimepath+=~/vimfiles/bundle/lightline
-" set runtimepath+=~/vimfiles/bundle/gitbranch
 set laststatus=2
 set noshowmode
 let g:unite_force_overwrite_statusline = 0
@@ -143,6 +128,12 @@ let g:lightline = {
   \   'gitbranch': 'FugitiveHead'
   \ },
   \ }
+
+" Neovim settings
+if has('nvim')
+  tnoremap <Esc> <C-\><C-n>
+  tnoremap <C-v><Esc> <Esc>
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc.nvim LSP Plug-in (Language Server Protocol) 
