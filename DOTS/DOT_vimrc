@@ -92,7 +92,6 @@ set runtimepath+=~/vimfiles/bundle/polyglot
 
 " Misc plugins
 set runtimepath+=~/vimfiles/bundle/editorconfig
-set runtimepath+=~/vimfiles/bundle/auto-pairs
 set runtimepath+=~/vimfiles/bundle/coc-nvim
 
 " NERDTree Settings
@@ -139,7 +138,7 @@ endif
 " coc.nvim LSP Plug-in (Language Server Protocol) 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load the coc extensions that co-exist in VSCode
-let g:coc_global_extensions = [ 'coc-tsserver', 'coc-html', 'coc-css', 'coc-json', 'coc-sql', 'coc-sh', 'coc-eslint', 'coc-explorer' ]
+let g:coc_global_extensions = [ 'coc-tsserver', 'coc-html', 'coc-css', 'coc-json', 'coc-sql', 'coc-sh', 'coc-eslint', 'coc-explorer', 'coc-pairs' ]
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set encoding=utf-8
 set hidden

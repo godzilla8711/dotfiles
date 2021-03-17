@@ -11,11 +11,11 @@ git submodule add https://github.com/tpope/vim-surround.git ./vimfiles/bundle/su
 git submodule add https://github.com/tpope/vim-repeat.git ./vimfiles/bundle/repeat
 git submodule add https://github.com/editorconfig/editorconfig-vim.git ./vimfiles/bundle/editorconfig
 git submodule add https://github.com/itchyny/lightline.vim ./vimfiles/bundle/lightline
-git submodule add https://github.com/itchyny/vim-gitbranch.git ./vimfiles/bundle/gitbranch
+# git submodule add https://github.com/itchyny/vim-gitbranch.git ./vimfiles/bundle/gitbranch
 git submodule add https://github.com/junegunn/fzf.vim.git ./vimfiles/bundle/fzf
 git submodule add https://github.com/preservim/nerdtree.git ./vimfiles/bundle/nerdtree
 git submodule add https://github.com/dense-analysis/ale.git ./vimfiles/bundle/ale
-git submodule add https://github.com/jiangmiao/auto-pairs.git ./vimfiles/bundle/auto-pairs
+# git submodule add https://github.com/jiangmiao/auto-pairs.git ./vimfiles/bundle/auto-pairs
 git submodule add https://github.com/neoclide/coc.nvim.git ./vimfiles/bundle/coc-nvim
 
 # Use v4.16.0 of polyglot due to stablility issues with latest
@@ -25,3 +25,11 @@ git checkout tags/v4.16.0
 git describe --tags
 cd ../../.. || exit 'Error changing directory'
 
+# Get a list of all installed submodules along with their paths
+git submodule
+
+# Remove a submodule
+git submodule deinit vimfiles/bundle/auto-pairs
+git rm vimfiles/bundle/auto-pairs
+git commit -m "Removed auto-pairs submodule"
+rm -rf .git/modules/vimfiles/bundle/auto-pairs
