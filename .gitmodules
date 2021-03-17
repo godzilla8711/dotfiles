@@ -16,9 +16,6 @@
 [submodule "vimfiles/bundle/lightline"]
 	path = vimfiles/bundle/lightline
 	url = https://github.com/itchyny/lightline.vim
-[submodule "vimfiles/bundle/gitbranch"]
-	path = vimfiles/bundle/gitbranch
-	url = https://github.com/itchyny/vim-gitbranch.git
 [submodule "vimfiles/bundle/fzf"]
 	path = vimfiles/bundle/fzf
 	url = https://github.com/junegunn/fzf.vim.git
