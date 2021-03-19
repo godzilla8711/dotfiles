@@ -16,9 +16,6 @@
 [submodule "vimfiles/bundle/lightline"]
 	path = vimfiles/bundle/lightline
 	url = https://github.com/itchyny/lightline.vim
-[submodule "vimfiles/bundle/gitbranch"]
-	path = vimfiles/bundle/gitbranch
-	url = https://github.com/itchyny/vim-gitbranch.git
 [submodule "vimfiles/bundle/fzf"]
 	path = vimfiles/bundle/fzf
 	url = https://github.com/junegunn/fzf.vim.git
@@ -36,9 +33,6 @@
 	url = https://github.com/jiangmiao/auto-pairs.git
 [submodule "vimfiles/auto-pairs"]
 	path = vimfiles/auto-pairs
-	url = https://github.com/jiangmiao/auto-pairs.git
-[submodule "vimfiles/bundle/auto-pairs"]
-	path = vimfiles/bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
 [submodule "notes/vimfiles/bundle/coc-nvim"]
 	path = notes/vimfiles/bundle/coc-nvim
