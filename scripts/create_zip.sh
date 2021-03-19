@@ -2,6 +2,7 @@
 
 DOTFILES_FOLDER="$HOME/dotfiles"
 SOLR_ZIP_FILE=solr-8.8.1.zip
+NEOVIM_FILE=nvim.appimage
 SOLR_DOWNLOAD_URL=https://mirrors.gigenet.com/apache/lucene/solr/8.8.1/solr-8.8.1.zip
 
 rm -rf dotfiles_new; 
@@ -20,6 +21,15 @@ else
   echo -e -n "\nDownloading $SOLR_ZIP_FILE..."; 
   wget "$SOLR_DOWNLOAD_URL" -O "$SOLR_ZIP_FILE";
   mv "$SOLR_ZIP_FILE" "dotfiles_new/bin";
+  echo "DONE";
+fi
+
+# Copy in the Neovim file if necessary
+if [ -f "$DOTFILES_FOLDER/bin/$NEOVIM_FILE" ]; then
+  echo -e -n "\nCopying in existing $NEOVIM_FILE...";
+  mkdir "dotfiles_new/bin/neovim";
+  cp "$DOTFILES_FOLDER/bin/$NEOVIM_FILE" "dotfiles_new/bin/neovim";
+  chmod 764 "dotfiles_new/bin/neovim/$NEOVIM_FILE";
   echo "DONE";
 fi
 
