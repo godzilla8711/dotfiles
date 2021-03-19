@@ -146,6 +146,10 @@ sudo apt-get install neovim
 # Have neovim use the vim config and plug-ins
 mkdir -p ~/.config/nvim
 cp ~/dotfiles/DOTS/DOT_init_vim ~/.config/nvim/init.vim
+
+# Install neovim-remote (nvr)
+Make sure pip3 works from command line, if not install python3
+pip3 install --user neovim-remote # Don't use sudo
 _________________________________
 Helpful shortcuts
 
