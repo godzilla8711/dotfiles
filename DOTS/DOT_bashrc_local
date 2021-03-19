@@ -19,6 +19,7 @@ alias tmuxvim='tmux kill-server ; tmux new -d -s '\''tmuxvim'\'' && tmux split-w
 
 # Make nvim your default vi/vim editor
 alias vim=nvim
+export PATH="${PATH:+${PATH}:}$HOME/.local/bin"
 if [ -n "$NVIM_LISTEN_ADDRESS"  ]; then
   if [ -x "$(command -v nvr)"  ]; then
     alias nvim=nvr

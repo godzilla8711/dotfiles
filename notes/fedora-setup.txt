@@ -162,7 +162,8 @@ Neovim install
 
 # For RHEL 7.x the universal appimage can be used
 mkdir ~/bin/neovim
-cp ~/dotfiles/bin/nvim.appimage ~/bin/neovim
+cd ~/bin/neovim
+wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod 764 ~/bin/neovim/nvim.appimage
 ln -s ~/bin/neovim/nvim.appimage ~/bin/neovim/nvim
 
