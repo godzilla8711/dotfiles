@@ -38,6 +38,10 @@ set shiftwidth=2
 set autoindent
 set expandtab
 
+" Disable beeps and flashes
+set noerrorbells visualbell t_vb=
+set belloff=all
+
 " Enable automatic file extension detection.
 syntax enable
 
