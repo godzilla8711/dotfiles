@@ -29,8 +29,8 @@ cp "$DOTFILES_FOLDER/DOTS/DOT_tmux_conf" "$HOME/.tmux.conf"
 cp "$HOME/.vimrc" "$BACKUP_FOLDER/vimrc_$TIMESTAMP"
 cp "$DOTFILES_FOLDER/DOTS/DOT_vimrc" "$HOME/.vimrc"
 
-cp "$HOME/.vim/coc-settings.json" "$BACKUP_FOLDER/coc_settings_json_$TIMESTAMP"
-cp "$DOTFILES_FOLDER/DOTS/DOT_coc_settings_json" "$HOME/.vim/coc-settings.json"
+cp "$HOME/.config/nvim/coc-settings.json" "$BACKUP_FOLDER/coc_settings_json_$TIMESTAMP"
+cp "$DOTFILES_FOLDER/DOTS/DOT_coc_settings_json" "$HOME/.config/nvim/coc-settings.json"
 
 echo "DONE"
 
