@@ -40,3 +40,6 @@
 [submodule "vimfiles/bundle/coc-nvim"]
 	path = vimfiles/bundle/coc-nvim
 	url = https://github.com/neoclide/coc.nvim.git
+[submodule "vimfiles/bundle/snippets"]
+	path = vimfiles/bundle/snippets
+	url = https://github.com/honza/vim-snippets.git
