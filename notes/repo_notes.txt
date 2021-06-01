@@ -29,6 +29,9 @@ cd ../../.. || exit 'Error changing directory'
 # Get a list of all installed submodules along with their paths
 git submodule
 
+# Update all submodules to their latest version
+git submodule update --remote --merge
+
 # Remove a submodule
 git submodule deinit vimfiles/bundle/auto-pairs
 git rm vimfiles/bundle/auto-pairs
