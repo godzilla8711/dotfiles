@@ -99,6 +99,11 @@ set runtimepath+=~/vimfiles/bundle/editorconfig
 set runtimepath+=~/vimfiles/bundle/snippets
 set runtimepath+=~/vimfiles/bundle/coc-nvim
 
+" Custom coc-nvim extension
+set runtimepath^=~/projects/extension/coc/formatter
+noremap <C-i> :CocCommand formatter.addDebugLine<CR>
+nnoremap <C-S-i> :CocCommand formatter.addStringifyLine<CR>"
+
 " NERDTree Settings
 set runtimepath+=~/vimfiles/bundle/nerdtree
 nmap <C-n> :NERDTreeToggle<CR>
