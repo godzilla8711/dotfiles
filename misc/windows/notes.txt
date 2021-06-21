@@ -1,5 +1,8 @@
 Install AutoHotKey on windows 10
 
+Open a linux shell script
+  - cp $HOME/dotfiles/misc/windows/CapsLock.ahk /mnt/c/Users/tony/Documents
+
 Open a command prompt
-  - copy CapLocl.ahk %AppData%\Microsoft\Windows\Start Menu\Programs\Startup
+  - copy %USERPROFILE%\Documents\CapsLock.ahk "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
   - Now it will run automatically
