@@ -1,0 +1,76 @@
+{
+  "name": "formatter",
+  "displayName": "formatter",
+  "description": "Provides several formatting utilities",
+  "version": "0.5.23",
+  "publisher": "lnProject",
+  "engines": {
+    "vscode": "^1.41.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.formatterComment",
+    "onCommand:extension.formatterLower",
+    "onCommand:extension.formatterUpper"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.formatterComment",
+        "title": "Formatter Comments"
+      },
+      {
+        "command": "extension.formatterLower",
+        "title": "Formatter Lower"
+      },
+      {
+        "command": "extension.formatterUpper",
+        "title": "Formatter Upper"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.formatterComment",
+        "key": "ctrl+;",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.formatterLower",
+        "key": "ctrl+alt+l",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.formatterUpper",
+        "key": "ctrl+alt+u",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "deploy": "./deploy.sh <<< y",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/lodash": "^4.14.149",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.41.0",
+    "glob": "^7.1.5",
+    "mocha": "^6.2.2",
+    "tslint": "^5.20.1",
+    "typescript": "^3.6.4",
+    "vscode-test": "^1.2.2"
+  }
+}

@@ -99,10 +99,21 @@ set runtimepath+=~/vimfiles/bundle/editorconfig
 set runtimepath+=~/vimfiles/bundle/snippets
 set runtimepath+=~/vimfiles/bundle/coc-nvim
 
-" Custom coc-nvim extension
-set runtimepath^=~/projects/extension/coc/formatter
-noremap <C-i> :CocCommand formatter.addDebugLine<CR>
-nnoremap <C-S-i> :CocCommand formatter.addStringifyLine<CR>"
+" Custom coc-nvim extension (mappings for both normal and visual modes)
+set runtimepath^=~/dotfiles/projects/extension/coc/formatter
+noremap <M-u> :CocCommand formatter.addDebugLine<CR>
+noremap <M-i> :CocCommand formatter.addStringifyLine<CR>
+noremap <M-o> :CocCommand formatter.addSqlFormatFunction<CR>
+
+noremap <M-j> :CocCommand formatter.cleanUpLine<CR>
+noremap <M-k> :CocCommand formatter.cleanUpCommentLine<CR>
+noremap <M-l> :CocCommand formatter.cleanUpPromiseLine<CR>
+
+noremap <M-f> :CocCommand formatter.sortImports<CR>
+
+" Enable for coc.nvim log file
+" let g:node_client_debug = 1
+" let $NODE_CLIENT_LOG_FILE = '/home/tony/projects/extension/coc/formatter/cocnvim.LOG'
 
 " NERDTree Settings
 set runtimepath+=~/vimfiles/bundle/nerdtree
@@ -111,7 +122,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " ALE settings for linting
 set runtimepath+=~/vimfiles/bundle/ale
-nmap <C-l> :ALELint<CR>
+" nmap <C-l> :ALELint<CR>
 let g:ale_sign_column_always = 0
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_enter = 1

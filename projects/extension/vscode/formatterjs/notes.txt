@@ -1,0 +1,39 @@
+Create the framework for a new extension
+- Ensure both yo and generator-code are installed globally: npm list --global --depth=0
+- On windows, open a cmd prompt and type "yo code". On Linux, you can used git bash, but it hangs for ~2 minutes before working.
+    ? What type of extension do you want to create? New Extension (JavaScript)
+    ? What's the name of your extension? formatterjs
+    ? What's the identifier of your extension? formatterjs
+    ? What's the description of your extension? Formats JS code
+    ? Enable JavaScript type checking in 'jsconfig.json'? Yes
+    ? Initialize a git repository? Yes
+    ? Which package manager to use? npm
+- Note that "yo code" creates a new folder
+______________________________________
+Package an extension into a .vsix file
+- vsce package
+______________________________________
+Global Packages...
+├── code-generator@1.0.7
+├── grunt-cli@1.3.2
+├── npm-check-updates@4.0.1
+├── vsce@1.71.0
+└── yo@3.1.1
+______________________________________
+TSLINT Notes...
+- tslint.json
+{
+  "rules": {
+    "no-string-throw": true,
+    "no-unused-expression": true,
+    "no-duplicate-variable": true,
+    "curly": true,
+    "class-name": true,
+    "semicolon": [
+      true,
+      "always"
+    ],
+    "triple-equals": true
+  },
+  "defaultSeverity": "warning"
+}

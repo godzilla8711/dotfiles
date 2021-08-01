@@ -1,0 +1,31 @@
+
+:CocAction("runCommand", "powershell.evaluateSelection", visualmode())
+
+let cmdEvalSelection = commands.registerCommand("powershell.evaluateSelection", async (mode) => doEval(mode));
+
+let doEval = async function(mode: string) {
+            let document = await workspace.document
+            if (!document || document.filetype !== 'ps1') {
+                return
+            }
+
+            const doc = await workspace.document;
+            const range = await workspace.getSelectedRange(mode, doc.textDocument);
+
+
+
+async function getSelectedTextToExecute(mode: string): Promise<string> {
+    let doc = workspace.getDocument(workspace.bufnr);
+    if (!doc) return "";
+
+    if (mode === 'n') {
+        // get whole line.
+        let range = await workspace.getCursorPosition();
+        if (range) return doc.getline(range.line);
+    } else {
+        let range = await workspace.getSelectedRange(mode, doc);
+        if (range) return doc.textDocument.getText(range);
+    }
+
+    return "";
+}

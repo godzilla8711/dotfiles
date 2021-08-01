@@ -1,0 +1,75 @@
+{
+  "name": "formatter",
+  "version": "0.1.0",
+  "description": "Format utility",
+  "author": "lnproject <lnproject@somewhere.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "keywords": [
+    "coc.nvim"
+  ],
+  "engines": {
+    "coc": "^0.0.80"
+  },
+  "scripts": {
+    "lint": "eslint src --ext ts",
+    "clean": "rimraf lib",
+    "watch": "node esbuild.js --watch",
+    "build": "node esbuild.js",
+    "prepare": "node esbuild.js"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.171",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
+    "coc.nvim": "^0.0.80",
+    "esbuild": "^0.8.42",
+    "eslint": "^7.14.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.1.2"
+  },
+  "activationEvents": [
+    "onCommand:formatter.addDebugLine",
+    "onCommand:formatter.addStringifyLine",
+    "onCommand:formatter.addSqlFormatFunction",
+    "onCommand:formatter.cleanUpLine",
+    "onCommand:formatter.cleanUpCommentLine",
+    "onCommand:formatter.cleanUpPromiseLine",
+    "onCommand:formatter.sortImports"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "formatter.addDebugLine",
+        "title": "Formatter Add Debug Line"
+      },
+      {
+        "command": "formatter.addStringifyLine",
+        "title": "Formatter Add Stringify Line"
+      },
+      {
+        "command": "formatter.addSqlFormatFunction",
+        "title": "Formatter Add SQL Format Function"
+      },
+      {
+        "command": "formatter.cleanUpLine",
+        "title": "Formatter Clean up Line"
+      },
+      {
+        "command": "formatter.cleanUpCommentLine",
+        "title": "Formatter Clean up Comment Line"
+      },
+      {
+        "command": "formatter.cleanUpPromiseLine",
+        "title": "Formatter Clean up Promise Line"
+      },
+      {
+        "command": "formatter.sortImports",
+        "title": "Formatter Sort Imports"
+      }
+    ]
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
