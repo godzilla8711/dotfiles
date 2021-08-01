@@ -11,7 +11,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
   const disposables = [
     commands.registerCommand('formatter.addDebugLine', createAddDebugLine),
     commands.registerCommand('formatter.addStringifyLine', createAddStringifyLine),
-    commands.registerCommand('fo}}rmatter.addSqlFormatFunction', createAddSqlFormatFunction),
+    commands.registerCommand('formatter.addSqlFormatFunction', createAddSqlFormatFunction),
     commands.registerCommand('formatter.cleanUpLine', createCleanUpLine),
     commands.registerCommand('formatter.cleanUpCommentLine', createCleanUpCommentLine),
     commands.registerCommand('formatter.cleanUpPromiseLine', createCleanUpPromiseLine),
