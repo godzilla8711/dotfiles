@@ -13,6 +13,13 @@ git clone https://github.com/godzilla8711/temp1.git temp1 --recursive
 # You may need to cd into the folder that contains the submodules
 git submodule update --remote
 
+# Update a submodule to a specific version
+cd bundle/coc-nvim
+git checkout tags/v0.0.82 -b release
+git submodule update
+cd ../..
+git submodule status
+
 # Remove a specific submodule
  git submodule deinit ./vimfiles/bundle/spacegray
  git rm ./vimfiles/bundle/spacegray 
