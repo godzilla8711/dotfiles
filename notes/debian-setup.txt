@@ -34,15 +34,10 @@ _________________________________
 Node/NPM
 
 # Install Node (includes npm)
-sudo apt update
+curl -sSL https://deb.nodesource.com/setup_16.x | sudo bash -
 sudo apt install nodejs
 node --version
 npm --verson (may need to restart ubuntu)
-
-# Update nodejs to latest version
-curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
-sudo bash nodesource_setup.sh
-sudo apt install nodejs
 
 # Completely remove nodejs
 sudo apt purge nodejs
@@ -55,9 +50,9 @@ To see npm global config: npm config list --global
     npm config set prefix ~/.npm-global
 
 Install global packages to support plug-ins
-npm list --depth=0 --global
 npm install -g eslint
 npm install -g bash-language-server
+npm list --depth=0 --global
 _________________________________
 Java (note package has jdk substring and not java substring)
 
