@@ -1,10 +1,17 @@
 GIT Submodules...
 
+# List all submodules
+git submodule status
+
 # Create submodule ...
 git submodule add https://github.com/tpope/vim-surround.git ./vimfiles/bundle/surround
 
 # Clone parent repo content along with any submodules
 git clone https://github.com/godzilla8711/temp1.git temp1 --recursive
+
+# Update all submodules to the latest versions
+# You may need to cd into the folder that contains the submodules
+git submodule update --remote
 
 # Remove a specific submodule
  git submodule deinit ./vimfiles/bundle/spacegray
