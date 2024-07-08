@@ -31,6 +31,7 @@ set history=100
 set ruler
 set scrolloff=3
 set nohlsearch  "don't highlight search results" home directory.
+set tw=0
 
 " tabs and indenting
 set tabstop=2
