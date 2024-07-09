@@ -1,0 +1,143 @@
+" Following 2 lines needed to support vim versions prior to 8.0
+set nocompatible
+filetype plugin indent on
+
+" Start Windows-only portion
+
+if has('win32')
+  source $VIMRUNTIME/mswin.vim
+  behave mswin
+  runtime! mswin.vim
+  unmap <C-F>
+endif
+
+set termguicolors
+set guifont=consolas:h11
+
+" End Windows-only portion
+
+set history=100
+set ruler
+set scrolloff=3
+set nohlsearch  "don't highlight search results" home directory.
+set tw=0
+
+" tabs and indenting
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set expandtab
+
+" Disable beeps and flashes
+set noerrorbells visualbell t_vb=
+set belloff=all
+
+" Enable automatic file extension detection.
+syntax enable
+
+" Disable creation of a .swp file and ~ backup file
+set noswapfile
+set nobackup
+
+" Some good key mappings
+let mapleader = ","
+nnoremap L $
+nnoremap H 0
+
+" Turn on autocompletion (Type ctrl-x ctrl-o when in insert mode)
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+" Always show double quotes in JSON fields
+let g:vim_json_conceal = 0
+let g:vim_json_syntax_conceal = 0
+
+" Return to last edit position when opening files
+autocmd BufReadPost *
+\ if line("'\"") > 0 && line("'\"") <= line("$") |
+\   exe "normal! g`\"" |
+\ endif
+
+" Load plug-ins by copying from github each plugin into your ~/vimfiles/bundle
+" folder for windows or your ~/.vim/bundle folder for unix. Then update the
+" runpath to include each plugin.
+
+" Surround plugin
+set runtimepath+=~/vimfiles/bundle/surround
+set runtimepath+=~/vimfiles/bundle/repeat
+
+" FZF plugin
+"   Install FZF bin first (typing fzf should work from command line)
+set runtimepath+=~/dotfiles/bin/fzf
+set runtimepath+=~/vimfiles/bundle/fzf
+nnoremap <C-p> :<C-u>FZF<CR>
+
+" Color scheme plugin
+" <---------------------- Linux-only START
+" Change first occurrence of this in vimfiles/bundle/spacegray/colors/spacegray.vim
+" from "ctermbg=234" to "ctermbg=232"
+" <---------------------- Linux-only END
+set runtimepath+=~/vimfiles/bundle/spacegray
+colorscheme spacegray
+
+" Language pack plugin
+let g:polyglot_disabled = ['markdown']
+set runtimepath+=~/vimfiles/bundle/polyglot
+
+" Misc plugins
+set runtimepath+=~/vimfiles/bundle/editorconfig
+set runtimepath+=~/vimfiles/bundle/snippets
+
+" NERDTree Settings
+set runtimepath+=~/vimfiles/bundle/nerdtree
+nmap <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" ALE settings for linting
+set runtimepath+=~/vimfiles/bundle/ale
+" nmap <C-l> :ALELint<CR>
+let g:ale_sign_column_always = 0
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_file_type_changed = 0
+let g:ale_lint_on_text_changed =  'always'
+
+" Lightline status bar plugin
+set runtimepath+=~/vimfiles/bundle/lightline
+set laststatus=2
+set noshowmode
+let g:unite_force_overwrite_statusline = 0
+let g:vimfiler_force_overwrite_statusline = 0
+let g:lightline = {
+  \ 'colorscheme': 'wombat',
+  \ 'active': {
+  \   'left': [ [ 'mode' ], 
+  \             [ 'gitbranch', 'filename', 'modified' ] ],
+  \   'right': [ [ 'lineinfo' ],
+  \              [ 'percent' ],
+  \              [ 'filetype' ] ]
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'FugitiveHead'
+  \ },
+  \ }
+
+set encoding=utf-8
+set hidden
+set nobackup
+set nowritebackup
+set cmdheight=2
+set updatetime=750
+set shortmess+=c
+
+if has("patch-8.1.1564")
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
