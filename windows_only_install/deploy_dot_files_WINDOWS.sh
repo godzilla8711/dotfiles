@@ -18,11 +18,11 @@ if [ $IS_COPY_BASHRC == 'Y' ]; then
   cp "$DOTFILES_FOLDER/DOTS/DOT_bash_profile" "$HOME/.bash_profile"
 
   cp "$HOME/.bashrc_local" "$BACKUP_FOLDER/bashrc_local_$TIMESTAMP"
-  cp "$DOTFILES_FOLDER/windows_only/DOT_bashrc_local" "$HOME/.bashrc_local"
+  cp "$DOTFILES_FOLDER/windows_only_install/DOT_bashrc_local" "$HOME/.bashrc_local"
 fi
 
 cp "$HOME/_vimrc" "$BACKUP_FOLDER/vimrc_$TIMESTAMP"
-cp "$DOTFILES_FOLDER/windows_only/DOT_vimrc" "$HOME/_vimrc"
+cp "$DOTFILES_FOLDER/windows_only_install/DOT_vimrc" "$HOME/_vimrc"
 
 echo "DONE"
 
